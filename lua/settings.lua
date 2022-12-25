@@ -10,7 +10,7 @@ vim.o.scrolloff = 8
 
 vim.o.number = true
 vim.o.mouse = "a"
-vim.o.numberwidth = 6
+vim.o.numberwidth = 5
 vim.o.relativenumber = true
 vim.o.cursorline = false
 vim.o.signcolumn = "number"
@@ -26,7 +26,7 @@ vim.o.expandtab = true
 vim.o.smarttab = true
 vim.o.cindent = true
 
-vim.o.wrap = true
+vim.o.wrap = false --long line false short line true
 vim.o.textwidth = 300
 vim.o.list = true
 vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
