@@ -1,0 +1,416 @@
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+def comment(): 
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and y != '0'
+endglobal
+
+snippet pkg[] "Package" bA
+\usepackage[${1:options}]{${2:package}}$0
+endsnippet
+
+snippet pkg "Package" b
+\usepackage{${1:package}}$0
+endsnippet
+
+snippet beg "begin{} / end{}" b
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet eqn "equation" b
+\begin{equation}
+	$1
+\end{equation}
+endsnippet
+
+snippet eqn* "equation" iA
+\begin{equation*}
+	$1
+\end{equation*}
+endsnippet
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`$2
+endsnippet
+
+snippet dm "Display Math" wA
+\[
+	${1:${VISUAL}}
+\]
+endsnippet
+
+snippet ali* "Align" bA
+\begin{align*}
+	${1:${VISUAL}}
+.\end{align*}
+endsnippet
+
+snippet ali "Align" bA
+\begin{align}
+	${1:${VISUAL}}
+.\end{align}
+endsnippet
+
+snippet sr "^2" iA
+^2
+endsnippet
+
+snippet cb "^3" iA
+^3
+endsnippet
+
+snippet compl "complement" iA
+^{c}
+endsnippet
+
+snippet tp "superscript" iA
+^{$1}$0
+endsnippet
+
+snippet // "Fraction" i
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet / "Fraction" b
+\\frac{${VISUAL}}{$1}$0
+endsnippet
+
+snippet fig "Figure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+	${2:\includegraphics[width=0.8\textwidth]{$3}}
+	\caption{${4:$3}}
+	\label{fig:${5:${3/\W+/-/g}}}
+\end{figure}
+endsnippet
+
+snippet enu "Enumerate" bA
+\begin{enumerate}
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet item "Itemize" b
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet desc "Description" b
+\begin{description}
+	\item[$1] $0
+\end{description}
+endsnippet
+
+snippet == "equals" iA
+&= $1 \\\\
+endsnippet
+
+snippet != "equals" iA
+\neq 
+endsnippet
+
+
+snippet => "implies" Ai
+\implies
+endsnippet
+
+snippet =< "implied by" Ai
+\impliedby
+endsnippet
+
+context "math()"
+snippet iff "iff" Ai
+\iff
+endsnippet
+
+snippet pmat "pmat" iA
+\begin{pmatrix} $1 \end{pmatrix} $0
+endsnippet
+
+snippet bmat "bmat" iA
+\begin{bmatrix} $1 \end{bmatrix} $0
+endsnippet
+
+context "math()"
+snippet () "left( right)" iA
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr "left( right)" i
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr| "left| right|" i
+\left| ${1:${VISUAL}} \right| $0
+endsnippet
+
+snippet lr{} "left\{ right\}" i
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+snippet lrb "left\{ right\}" i
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+snippet lr[ "left[ right]" i
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+snippet lr< "leftangle rightangle" iA
+\left<${1:${VISUAL}} \right>$0
+endsnippet
+
+context "math()"
+snippet conj "conjugate" iA
+\overline{$1}$0
+endsnippet
+
+context "math()"
+snippet bar "conjugate" 
+\overline{$1}$0
+endsnippet
+
+snippet under "conjugate" 
+\underline{$1}$0
+endsnippet
+
+snippet lim "limit" w
+\lim_{${1:n} \to ${2:\infty}} 
+endsnippet
+
+snippet <= "leq" iA
+\le 
+endsnippet
+
+snippet >= "geq" iA
+\ge 
+endsnippet
+
+snippet !< "textless"
+\textless
+endsnippet
+
+snippet !> "textless"
+\textgreater
+endsnippet
+
+snippet ~~ "~" iA
+\sim 
+endsnippet
+
+context "math()"
+snippet inn "in " iA
+\in 
+endsnippet
+
+snippet OO "emptyset" iA
+\O
+endsnippet
+
+snippet AA "script A" iA
+\mathcal{A}
+endsnippet
+
+snippet SS "script S" iA
+\mathcal{S}
+endsnippet
+
+snippet BB "script B" iA
+\mathcal{B}
+endsnippet
+
+snippet RR "real" iA
+\mathds{R}
+endsnippet
+
+snippet QQ "Q" iA
+\mathds{Q}
+endsnippet
+
+snippet ZZ "Z" iA
+\mathds{Z}
+endsnippet
+
+snippet CC "C" iA
+\mathds{C}
+endsnippet
+
+snippet chap "Chapter" wi
+\chapter{$1${VISUAL}}
+endsnippet
+
+snippet sec "Section" wi
+\section{$1${VISUAL}}
+endsnippet
+
+snippet sec* "Section*" wi
+\section*{$1${VISUAL}}
+endsnippet
+
+snippet sub "Subsection" wi
+\subsection{$1${VISUAL}}
+endsnippet
+
+snippet sub* "Subsection*" wi
+\subsection*{$1${VISUAL}}
+endsnippet
+
+snippet subsub "Subsection" wi
+\subsubsection{$1${VISUAL}}
+endsnippet
+
+snippet subsub* "Subsubsection" wi
+\subsubsection*{$1${VISUAL}}
+endsnippet
+
+snippet par "Paragraph" wi
+\paragraph{$1${VISUAL}}
+endsnippet
+
+snippet par* "Paragraph*" wi
+\paragraph*{$1${VISUAL}}
+endsnippet
+
+snippet subpar "Sub Paragraph" wi
+\subparagraph{$1${VISUAL}}
+endsnippet
+
+snippet subpar* "Sub Paragraph*" wi
+\subparagraph*{$1${VISUAL}}
+endsnippet
+
+snippet beg "begin{} / end{}" bi
+\begin{$1}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet cnt "Center" bi
+\begin{center}
+	${0:${VISUAL}}
+\end{center}
+endsnippet
+
+snippet desc "Description" bi
+\begin{description}
+	\item[${1:${VISUAL}}] $0
+\end{description}
+endsnippet
+
+snippet lemma "Lemma" bi
+\begin{lemma}
+	${0:${VISUAL}}
+\end{lemma}
+endsnippet
+
+snippet prop "Proposition" bi
+\begin{prop}[$1]
+	${0:${VISUAL}}
+\end{prop}
+endsnippet
+
+snippet thrm "Theorem" bi
+\begin{theorem}[$1]
+	${0:${VISUAL}}
+\end{theorem}
+endsnippet
+
+snippet post "postulate" bi
+\begin{postulate}[$1]
+	${0:${VISUAL}}
+\end{postulate}
+endsnippet
+
+snippet prf "Proof" bi
+\begin{proof}
+	${0:${VISUAL}}
+\end{proof}
+endsnippet
+
+snippet def "Definition" bi
+\begin{definition}[$1]
+	${0:${VISUAL}}
+\end{definition}
+endsnippet
+
+snippet nte "Note" bi
+\begin{note}[$1]
+	${0:${VISUAL}}
+\end{note}
+endsnippet
+
+snippet prob "Problem" bi
+\begin{problem}[$1]
+	${0:${VISUAL}}
+\end{problem}
+endsnippet
+
+snippet corl "Corollary" bi
+\begin{corollary}[$1]
+	${0:${VISUAL}}
+\end{corollary}
+endsnippet
+
+snippet example "Example" bi
+\begin{example}[$1]
+	${0:${VISUAL}}
+\end{example}
+endsnippet
+
+snippet notion "Notation" bi
+\begin{notation}[$1]
+	$0${VISUAL}
+\end{notation}
+endsnippet
+
+snippet conc "Conclusion" bi
+\begin{conclusion}[$1]
+	$0${VISUAL}
+\end{conclusion}
+endsnippet
+
+snippet bf "Bold" 
+\textbf{$1} $0
+endsnippet
+
+snippet it "Italic" 
+\textit{$1} $0
+endsnippet
+
+snippet itbf "Bold Italic" b
+\textbf{\textit{$1}} $0
+endsnippet
+
+snippet colordef "tcolorbox" bA
+\begin{tcolorbox}[colback=black!5!white,colframe=black!80!white,title=Definition: $1]
+    $2
+\end{tcolorbox}
+$0
+endsnippet
+
+snippet	colorth "tcolorbox" bA
+\begin{tcolorbox}[colback=green!5!white,colframe=green!45!blue,title=Theorem: $1]
+	$2
+\end{tcolorbox}
+$0 
+endsnippet 
+
+snippet op "operatorname"
+\operatorname{$1}$0
+endsnippet	
