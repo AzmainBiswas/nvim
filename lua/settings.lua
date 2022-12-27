@@ -6,7 +6,7 @@ vim.opt.updatetime = 200
 vim.opt.scrolloff = 10
 
 -- Better editor UI
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block-blinkon2-Cursor,r-cr-o:hor20"
+--vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block-blinkon2-Cursor,r-cr-o:hor20"
 vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.numberwidth = 5
