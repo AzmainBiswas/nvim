@@ -1,68 +1,67 @@
 -- Decrease update time
-vim.o.timeoutlen = 500
-vim.o.updatetime = 200
+vim.opt.timeoutlen = 500
+vim.opt.updatetime = 200
 
 -- Number of screen lines to keep above and below the cursor
-
-vim.o.scrolloff = 8
+vim.opt.scrolloff = 10
 
 -- Better editor UI
-
-vim.o.number = true
-vim.o.mouse = "a"
-vim.o.numberwidth = 5
-vim.o.relativenumber = true
-vim.o.cursorline = false
-vim.o.signcolumn = "number"
-vim.o.colorcolumn = "99999" -- fix columns
-vim.o.termguicolors = true
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block-blinkon2-Cursor,r-cr-o:hor20"
+vim.opt.number = true
+vim.opt.mouse = "a"
+vim.opt.numberwidth = 5
+vim.opt.relativenumber = true
+vim.opt.cursorline = false
+vim.opt.signcolumn = "number"
+vim.opt.colorcolumn = "99999" -- fix columns
+vim.opt.termguicolors = true
 
 -- Better editing experience
 
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
-vim.o.smarttab = true
-vim.o.cindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.cindent = false
 
-vim.o.wrap = false --long line false short line true
-vim.o.textwidth = 300
-vim.o.list = true
-vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
+vim.opt.wrap = false --long line false short line true
+vim.opt.textwidth = 300
+vim.opt.list = true
+vim.opt.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 
-vim.o.hlsearch = false
-vim.o.incsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- Makes neovim and host OS clipboard play nicely with each other
-vim.o.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 -- Case insensitive searching UNLESS /C or capital in search
 
-vim.o.smartindent = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.smartindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Undo and backup options
 
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.undofile = true
-vim.o.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.undofile = true
+vim.opt.swapfile = false
 
 -- Remember 50 items in commandline history
 
-vim.o.history = 50
+vim.opt.history = 50
 
 -- Better buffer splitting
 
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- spell checking
 
-vim.o.spell = false
-vim.o.spelllang = "en_us"
+vim.opt.spell = false
+vim.opt.spelllang = "en_us"
 
 --nodejs provider of
 

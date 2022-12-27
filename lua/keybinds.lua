@@ -6,9 +6,9 @@ vim.keymap.set("i", "<C-S>", "<esc><CMD>w<CR>")
 vim.keymap.set("n", "<C-S>", "<esc><CMD>w<CR>")
 
 --NvimTree---
-vim.keymap.set("n", "<C-h>", "<CMD>NvimTreeToggle<CR>")
-vim.keymap.set("n", "<C-f>", "<CMD>NvimTreeFocus<CR>")
-
+--vim.keymap.set("n", "<C-h>", "<CMD>NvimTreeToggle<CR>")
+--vim.keymap.set("n", "<C-f>", "<CMD>NvimTreeFocus<CR>")
+vim.keymap.set("n", "<C-h>","<CMD>Ex<CR>")
 --Vimtex--
 vim.keymap.set("n", "<leader>ll", "<CMD>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>lc", "<CMD>VimtexClean<CR>")
@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>fd", "<CMD>Telescope file_browser<CR>")
 
 --spell checking--
 -- z+= to open spelling suggestion
-vim.keymap.set("n", "<leader>ss", "<CMD>setlocal spell!<CR>")
+vim.keymap.set("n", "<leader>ss", ":setlocal spell!<CR>")
 vim.keymap.set("n", "<leader>c", "<CMD>SpellCheck<CR>")
 
 --bufferline--

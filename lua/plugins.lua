@@ -16,12 +16,12 @@ return require ('packer').startup(function(use)
 
     -- file tree in vim
 
-    use {'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
+    --use {'kyazdani42/nvim-tree.lua',
+        --requires = {
+            --'kyazdani42/nvim-web-devicons', -- optional, for file icons
+        --},
+        --tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    --}
 
     -- hexcolor indecator
     use({
