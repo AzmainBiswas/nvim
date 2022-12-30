@@ -6,9 +6,9 @@ vim.keymap.set("i", "<C-S>", "<esc><CMD>w<CR>")
 vim.keymap.set("n", "<C-S>", "<esc><CMD>w<CR>")
 
 --NvimTree---
---vim.keymap.set("n", "<C-h>", "<CMD>NvimTreeToggle<CR>")
---vim.keymap.set("n", "<C-f>", "<CMD>NvimTreeFocus<CR>")
-vim.keymap.set("n", "<C-h>","<CMD>Ex<CR>")
+vim.keymap.set("n", "<C-h>", "<CMD>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<C-f>", "<CMD>NvimTreeFocus<CR>")
+--vim.keymap.set("n", "<C-h>","<CMD>Ex<CR>")
 --Vimtex--
 vim.keymap.set("n", "<leader>ll", "<CMD>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>lc", "<CMD>VimtexClean<CR>")
@@ -40,9 +40,13 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-c>", "<ESC>")
-
-
-
-
-
-
+--bracket
+vim.keymap.set("i", "'", "''<left>")
+vim.keymap.set("i", "(", "()<left>")
+vim.keymap.set("i", "[", "[]<left>")
+vim.keymap.set("i", "{", "{}<left>")
+vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O")
+vim.keymap.set("i", "{;<CR>", "{<CR>};<ESC>O")
+vim.cmd([[
+    inoremap " ""<left>
+]])

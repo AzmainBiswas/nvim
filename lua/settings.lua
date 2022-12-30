@@ -25,7 +25,7 @@ vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.cindent = false
 
-vim.opt.wrap = false --long line false short line true
+vim.opt.wrap = true --long line false short line true
 vim.opt.textwidth = 300
 vim.opt.list = true
 vim.opt.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
@@ -40,7 +40,7 @@ vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.smartindent = true
 vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.smartcase = false
 
 -- Undo and backup options
 
