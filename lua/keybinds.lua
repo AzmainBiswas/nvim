@@ -41,7 +41,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-c>", "<ESC>")
 --bracket
-vim.keymap.set("i", "'", "''<left>")
+--vim.keymap.set("i", "'", "''<left>")
 vim.keymap.set("i", "(", "()<left>")
 vim.keymap.set("i", "[", "[]<left>")
 vim.keymap.set("i", "{", "{}<left>")
