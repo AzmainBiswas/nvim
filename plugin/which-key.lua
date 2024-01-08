@@ -29,8 +29,8 @@ local mappings = {
 	w = { "<CMD>w<CR>", "Write file" },
 	x = { "<CMD>q<CR>", "Exit vim" },
 	v = {
-		name = "lsp shit",
-		-- p = { "<CMD>Ex<CR>", "open Ex" },
+		name = "files and lsp shit",
+		p = { "<CMD>Ex<CR>", "open Ex" },
 		d = {
 			function()
 				vim.diagnostic.open_float()
