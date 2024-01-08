@@ -36,6 +36,6 @@ vim.keymap.set("n", "<C-p>", function()
 end)
 
 -- some keymaps
-vim.keymap.set("i", "[", "[]<left>")
-vim.keymap.set("i", "(", "()<left>")
-vim.keymap.set("i", "{", "{}<left>")
+-- vim.keymap.set("i", "[", "[]<left>")
+-- vim.keymap.set("i", "(", "()<left>")
+-- vim.keymap.set("i", "{", "{}<left>")

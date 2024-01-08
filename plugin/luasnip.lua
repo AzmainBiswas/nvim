@@ -13,7 +13,7 @@ ls.config.set_config({
 	history = true, --keep around last snippet local to jump back
 	updateevents = "TextChanged,TextChangedI", --update changes as you type
 	enable_autosnippets = true,
-    store_selection_keys = "<Tab>",
+	store_selection_keys = "<Tab>",
 	ext_opts = {
 		[types.choiceNode] = {
 			active = {
@@ -72,8 +72,12 @@ end) --}}}
 
 -- More Settings --
 
-vim.keymap.set("n", "<Leader><CR>", "<cmd>LuaSnipEdit<cr>", { silent = true, noremap = true })
+vim.keymap.set(
+	"n",
+	"<Leader><CR>",
+	"<cmd>lua require('luasnip.loaders').edit_snippet_files()<cr>",
+	{ silent = true, noremap = true }
+)
 -- vim.keymap.set('n', '<Leader>ls', "<cmd>so C:/Users/azmain/AppData/Local/nvim/plugin/luasnip.lua<CR>")
-vim.keymap.set('n', '<Leader>ls', "<cmd>so ~/.config/nvim/plugin/luasnip.lua<CR>")
+vim.keymap.set("n", "<Leader>ls", "<cmd>so ~/.config/nvim/plugin/luasnip.lua<CR>")
 vim.cmd([[autocmd BufEnter */snippets/*.lua nnoremap <silent> <buffer> <CR> /-- End Refactoring --<CR>O<Esc>O]])
-

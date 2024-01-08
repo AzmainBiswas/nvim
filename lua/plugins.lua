@@ -16,7 +16,14 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{ "nvim-telescope/telescope-ui-select.nvim" },
+			"nvim-telescope/telescope-file-browser.nvim",
 		},
+	},
+	-- floating command line
+	{
+		"VonHeikemen/fine-cmdline.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
 	},
 	-- alpha nvim dashbord
 	{
