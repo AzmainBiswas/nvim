@@ -10,15 +10,6 @@ return {
 	{ "dstein64/vim-startuptime" },
 	{ "mbbill/undotree" },
 	-- telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-			{ "nvim-telescope/telescope-ui-select.nvim" },
-		},
-	},
 	-- alpha nvim dashbord
 	{
 		"goolord/alpha-nvim",
@@ -28,20 +19,6 @@ return {
 		end,
 	},
 	-- lualine
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-			"linrongbin16/lsp-progress.nvim",
-		},
-	},
-	{
-		"linrongbin16/lsp-progress.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("lsp-progress").setup()
-		end,
-	},
 	-- tree-sitter
 	{
 		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },

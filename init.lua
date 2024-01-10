@@ -1,21 +1,11 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
+-- maps and settings
+require("biswas.pre")
+require("biswas.pre")
 
-vim.opt.rtp:prepend(lazypath)
+-- Lazy
+require("biswas.lazy")
 
-require("biswas.lua.set")
-require("biswas.lua.map")
-require("lazy").setup("plugins")
-
+-- auto cmd groups for formating lua and python on seved
 local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
