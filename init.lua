@@ -5,6 +5,11 @@ require("biswas.pre")
 -- Lazy
 require("biswas.lazy")
 
+-- set Color Scheme
+-- local color = color or "gruvbox"
+local color = color or "catppuccin-mocha"
+vim.cmd.colorscheme(color)
+
 -- auto cmd groups for formating lua and python on seved
 local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
 

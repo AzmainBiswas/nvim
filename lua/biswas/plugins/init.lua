@@ -1,33 +1,6 @@
 return {
-	{ "folke/which-key.nvim", lazy = true },
-	{
-		"norcalli/nvim-colorizer.lua",
-		lazy = true,
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-	{ "dstein64/vim-startuptime" },
-	{ "mbbill/undotree" },
-	-- telescope
-	-- alpha nvim dashbord
-	{
-		"goolord/alpha-nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("alpha").setup(require("alpha.themes.startify").config)
-		end,
-	},
-	-- lualine
-	-- tree-sitter
-	{
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-		"nvim-treesitter/nvim-treesitter-context",
-	},
-	{ "lukas-reineke/indent-blankline.nvim" },
-	-- useless
-	-- { "eandrju/cellular-automaton.nvim" },
 
+	{ "dstein64/vim-startuptime" },
 	-- lsp
 	{
 		"vonheikemen/lsp-zero.nvim",
@@ -50,18 +23,4 @@ return {
 			{ "hrsh7th/cmp-cmdline" },
 		},
 	},
-	-- snipets
-	{ "l3mon4d3/luasnip" },
-	{ "saadparwaiz1/cmp_luasnip" },
-	-- { "SirVer/ultisnips" },
-	-- vimtex
-	{
-		"lervag/vimtex",
-	},
-	-- vim-tmux-navigator
-	{ "christoomey/vim-tmux-navigator", lazy = false },
-	-- colorschemes
-	"folke/tokyonight.nvim",
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
 }
