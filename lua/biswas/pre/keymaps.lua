@@ -24,17 +24,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- vim.keymap.set("n", "<leader>cc", vim.cmd.ColorToggle)
 
--- use less pluging of all time
-vim.keymap.set("n", "<leader>gcr", "<cmd>CellularAutomaton make_it_rain<CR>")
-vim.keymap.set("n", "<leader>gcl", "<cmd>CellularAutomaton game_of_life<CR>")
-
 -- spell checker
--- vim.keymap.set('n', '<leader>ss', '<CMD>set spell!<CR>')
---
--- Telescope
-vim.keymap.set("n", "<C-p>", function()
-	vim.cmd("Telescope fd")
-end)
+vim.keymap.set("n", "<leader>ss", "<CMD>set spell!<CR>")
 
 -- some keymaps
 -- vim.keymap.set("i", "[", "[]<left>")

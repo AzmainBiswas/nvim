@@ -1,18 +1,35 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
+-- maps and settings
+require("biswas.pre")
 
-vim.opt.rtp:prepend(lazypath)
+-- Lazy
+require("biswas.lazy")
 
-require("map")
-require("set")
-require("lazy").setup("plugins")
-require("autocmds")
+require("biswas.after")
+
+-- set Color Scheme
+-- local color = color or "gruvbox"
+local color = color or "catppuccin-mocha"
+vim.cmd.colorscheme(color)
+
+-- auto cmd groups for formating lua and python on seved
+local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.py" },
+	desc = "Auto-format Python files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(":silent !black " .. fileName)
+	end,
+	group = autocmd_group,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.lua" },
+	desc = "Auto-format Lua files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(":silent !stylua  " .. fileName)
+	end,
+	group = autocmd_group,
+})
