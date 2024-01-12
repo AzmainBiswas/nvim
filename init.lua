@@ -1,9 +1,10 @@
 -- maps and settings
 require("biswas.pre")
-require("biswas.pre")
 
 -- Lazy
 require("biswas.lazy")
+
+require("biswas.after")
 
 -- set Color Scheme
 -- local color = color or "gruvbox"

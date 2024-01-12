@@ -1,15 +1,17 @@
 return {
 	{
 		"l3mon4d3/luasnip",
-		event = "BufEnter",
-		dependencies = { "saadparwaiz1/cmp_luasnip" },
+		dependencies = {
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		},
 		build = "make install_jsregexp",
 		config = function()
 			-- config goes tere
 
 			local ls = require("luasnip") --{{{
 
-			-- require("luasnip.loaders.from_vscode").lazy_load()
+			require("luasnip.loaders.from_vscode").lazy_load()
 
 			-- for linux
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
