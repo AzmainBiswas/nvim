@@ -13,12 +13,12 @@ return {
 		require("obsidian").setup({
 			workspaces = {
 				{
-					name = "Program",
-					path = "/mnt/docs/sync2/Program",
+					name = "Note",
+					path = "/mnt/docs/sync2/Note",
 				},
 				{
-					name = "note",
-					path = "/mnt/docs/sync2/Note",
+					name = "Program",
+					path = "/mnt/docs/sync2/Program",
 				},
 			},
 			daily_notes = {
@@ -33,6 +33,9 @@ return {
 			},
 			completion = {
 				nvim_cmp = true,
+				new_notes_location = "current_dir",
+				prepend_note_path = true,
+				-- use_path_only = true,
 			},
 			mappings = {
 				-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.

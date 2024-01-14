@@ -1,5 +1,5 @@
 return {
-	{ "dstein64/vim-startuptime" },
+	{ "nvim-lua/plenary.nvim" },
 	-- LSP progress messages.
 	{
 		"j-hui/fidget.nvim",

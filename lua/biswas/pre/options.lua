@@ -31,7 +31,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-vim.opt.colorcolumn = "85"
+-- vim.opt.colorcolumn = "85"
 
 -- netrw
 vim.g.netrw_browse_split = 0

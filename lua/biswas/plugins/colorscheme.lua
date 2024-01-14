@@ -9,16 +9,16 @@ return {
 				no_italic = false,
 				styles = {
 					comments = { "italic" },
-					conditionals = { "italic" },
-					loops = { "italic" },
+					conditionals = {},
+					loops = {},
 					functions = { "italic" },
-					keywords = { "bold" },
+					keywords = {},
 					strings = {},
 					variables = {},
 					numbers = { "italic" },
 					booleans = { "italic" },
 					properties = {},
-					types = { "bold" },
+					types = {},
 					operators = {},
 				},
 				integrations = {
@@ -76,7 +76,7 @@ return {
 				palette_overrides = {},
 				overrides = {},
 				dim_inactive = true,
-				transparent_mode = true,
+				transparent_mode = false,
 			})
 		end, -- gruvbox
 	},
