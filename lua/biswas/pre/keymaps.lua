@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<CR>", ":")
-vim.keymap.set("n", "<C-b>", "<CMD>Ex<CR>")
+-- vim.keymap.set("n", "<C-b>", "<CMD>Ex<CR>")
 vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>w<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
@@ -26,7 +26,12 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- vim.keymap.set("n", "<leader>cc", vim.cmd.ColorToggle)
 
 -- spell checker
-vim.keymap.set("n", "<leader>ss", "<CMD>set spell!<CR>")
+vim.keymap.set("n", "<leader>ss", "<CMD>set spell!<CR>", { desc = "set spell" })
+
+-- for c and c++
+vim.keymap.set("n", "<leader>cp", function()
+	vim.cmd([[set tabstop=2 shiftwidth=2]])
+end, { desc = "set tab 2 space" })
 
 -- some keymaps
 -- vim.keymap.set("i", "[", "[]<left>")

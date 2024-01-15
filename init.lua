@@ -14,6 +14,16 @@ vim.cmd.colorscheme(color)
 -- auto cmd groups for formating lua and python on seved
 local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
 
+-- not working
+vim.api.nvim_create_autocmd({ "BufEnter", "BufRead" }, {
+	pattern = { ".c", ".cpp" },
+	desc = "set tab to 2 space for c cpp files",
+	callback = function()
+		vim.cmd([[set tabstop=2 shiftwidth=2]])
+	end,
+	group = autocmd_group,
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	pattern = { "*.py" },
 	desc = "Auto-format Python files after saving",
