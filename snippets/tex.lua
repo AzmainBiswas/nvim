@@ -84,7 +84,7 @@ return {
 	s({ trig = "<=", snippetType = "autosnippet" }, { t("\\le") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ">=", snippetType = "autosnippet" }, { t("\\ge") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = "...", snippetType = "autosnippet" }, { t("\\ldots") }, { condition = tex_utils.in_mathzone }),
-    s({ trig = "sr", snippetType = "autosnippet" }, { t("^{2}") }, { condition = tex_utils.in_mathzone }),
+	s({ trig = "sr", snippetType = "autosnippet" }, { t("^{2}") }, { condition = tex_utils.in_mathzone }),
 	s(
 		{ trig = "//", snippetType = "autosnippet", wordTrig = false },
 		fmta("\\frac{<>}{<>}", { i(1), i(2) }),
@@ -95,16 +95,16 @@ return {
 		fmta([[ _{<>} ]], { d(1, get_visual) }),
 		{ condition = tex_utils.in_mathzone }
 	),
-    s(
-        {trig = "lr(", snippetType="autosnippet", wordTrig = false },
-        fmta("\\left( <> \\right)", {i(1)}),
-        { condition = tex_utils.in_mathzone }
-    ),
-    s(
-        {trig = "lr[", snippetType="autosnippet", wordTrig = false },
-        fmta("\\left[ <> \\right]", {i(1)}),
-        { condition = tex_utils.in_mathzone }
-    ),
+	s(
+		{ trig = "lr(", snippetType = "autosnippet", wordTrig = false },
+		fmta("\\left( <> \\right)", { i(1) }),
+		{ condition = tex_utils.in_mathzone }
+	),
+	s(
+		{ trig = "lr[", snippetType = "autosnippet", wordTrig = false },
+		fmta("\\left[ <> \\right]", { i(1) }),
+		{ condition = tex_utils.in_mathzone }
+	),
 	s(
 		{ trig = "tp", snippetType = "autosnippet", wordTrig = false },
 		fmta([[ ^{<>} ]], { d(1, get_visual) }),
@@ -316,16 +316,16 @@ return {
 		{ condition = tex_utils.in_mathzone }
 	),
 	s(
-		{ trig = "bfr", snippetType = "autosnippet", dscr="Begin frame" },
+		{ trig = "bfr", snippetType = "autosnippet", dscr = "Begin frame" },
 		fmta(
 			[[
             \begin{frame}{<>}
                 <>
             \end{frame}
             ]],
-			{ i(1) , i(0)}
+			{ i(1), i(0) }
 		)
-    ),
+	),
 
 	-- text mods
 	s(
@@ -339,11 +339,31 @@ return {
 	s({ trig = "mcl", snippetType = "autosnippet" }, fmta([[ \mathcal{<>} ]], { d(1, get_visual) })),
 
 	-- sections chapter
-	s({ trig = "*chap", dscr = "un-numbered chapter", snippetType = "autosnippet" }, fmta([[\chapter*{<>}]], { i(1) }), { condition = line_begin }),
-	s({ trig = "*sec", dscr = "un-numbered section", snippetType = "autosnippet" }, fmta([[\section*{<>}]], { i(1) }), { condition = line_begin }),
-	s({ trig = "chap", dscr = "chapter", snippetType = "autosnippet" }, fmta([[\chapter{<>}]], { i(1) }), { condition = line_begin }),
-	s({ trig = "sec", dscr = "Top-level section", snippetType = "autosnippet" }, fmta([[\section{<>}]], { i(1) }), { condition = line_begin }),
-	s({ trig = "subsce", dscr = "sub section", snippetType = "autosnippet" }, fmta([[\subsection{<>}]], { i(1) }), { condition = line_begin }),
+	s(
+		{ trig = "*chap", dscr = "un-numbered chapter", snippetType = "autosnippet" },
+		fmta([[\chapter*{<>}]], { i(1) }),
+		{ condition = line_begin }
+	),
+	s(
+		{ trig = "*sec", dscr = "un-numbered section", snippetType = "autosnippet" },
+		fmta([[\section*{<>}]], { i(1) }),
+		{ condition = line_begin }
+	),
+	s(
+		{ trig = "chap", dscr = "chapter", snippetType = "autosnippet" },
+		fmta([[\chapter{<>}]], { i(1) }),
+		{ condition = line_begin }
+	),
+	s(
+		{ trig = "sec", dscr = "Top-level section", snippetType = "autosnippet" },
+		fmta([[\section{<>}]], { i(1) }),
+		{ condition = line_begin }
+	),
+	s(
+		{ trig = "subsce", dscr = "sub section", snippetType = "autosnippet" },
+		fmta([[\subsection{<>}]], { i(1) }),
+		{ condition = line_begin }
+	),
 	s(
 		{ trig = "*subsce", dscr = "nu-numbered dunsection" },
 		fmta([[\subsection*{<>}]], { i(1) }),

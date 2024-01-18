@@ -13,6 +13,15 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return {
-	s({ trig = "cmd" }, fmta("vim.cmd[[<>]]", { i(1, "vim commends") })),
-	s({ trig = "vimkey" }, fmta("vim.keymap.set('<>', '<>', '<>')", { i(1, "mode"), i(2, "key"), i(3, "commends") })),
+	s(
+		{ trig = "cb" },
+		fmta(
+			[[
+    ```<>
+    <>
+    ```
+    ]],
+			{ i(1, "language"), i(2, "code") }
+		)
+	),
 }
