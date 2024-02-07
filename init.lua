@@ -8,7 +8,8 @@ require("biswas.after")
 
 -- set Color Scheme
 -- local color = color or "gruvbox"
-local color = color or "catppuccin-mocha"
+-- local color = color or "catppuccin-mocha"
+local color = color or "github_dark_default"
 vim.cmd.colorscheme(color)
 
 -- auto cmd groups for formating lua and python on seved
