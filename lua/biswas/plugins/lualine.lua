@@ -84,7 +84,7 @@ return {
 					},
 					lualine_y = {
 						{ "filetype", colored = true },
-						-- "progress",
+						"progress",
 					},
 					lualine_z = {
 						-- "os.date('%a %I:%M %p')",
