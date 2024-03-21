@@ -7,20 +7,6 @@ return {
 			require("catppuccin").setup({
 				transparent_background = true,
 				no_italic = false,
-				styles = {
-					comments = { "italic" },
-					conditionals = {},
-					loops = {},
-					functions = { "italic" },
-					keywords = {},
-					strings = {},
-					variables = {},
-					numbers = { "italic" },
-					booleans = { "italic" },
-					properties = {},
-					types = {},
-					operators = {},
-				},
 				integrations = {
 					cmp = true,
 					gitsigns = true,
@@ -43,7 +29,7 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				style = "night",
-				transparent = true,
+				transparent = false,
 				styles = {
 					comments = { italic = true },
 					functions = {},
