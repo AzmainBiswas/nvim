@@ -1,7 +1,7 @@
 return {
 	{
 		"catppuccin/nvim",
-		lazy = true,
+		lazy = false,
 		name = "catppuccin",
 		config = function()
 			require("catppuccin").setup({
@@ -25,7 +25,7 @@ return {
 	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
 		config = function()
 			require("tokyonight").setup({
 				style = "night",
@@ -40,7 +40,7 @@ return {
 	},
 	{
 		"ellisonleao/gruvbox.nvim",
-		lazy = true,
+		lazy = false,
 		config = function()
 			require("gruvbox").setup({
 				undercurl = true,
@@ -68,7 +68,7 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		lazy = true,
+		lazy = false,
 		config = function()
 			require("github-theme").setup({
 				options = {
