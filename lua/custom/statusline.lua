@@ -53,8 +53,9 @@ local statusline = {
 	" %m",
 
 	"%=", -- right
-	"[%l/%L] ",
-	"[%p%%] ",
+    "b:%n ",
+	"%l/%L ",
+	"%p%% ",
 	"%y ",
 }
 
@@ -62,7 +63,6 @@ local winbar = {
 	"%=",
 	"%m",
 	"%t",
-    " [b:%n] "
 }
 
 vim.o.statusline = table.concat(statusline, "")
