@@ -1,6 +1,7 @@
 return {
     {
         "l3mon4d3/luasnip",
+        build = "make install_jsregexp",
         dependencies = {
             "hrsh7th/nvim-cmp",
             "saadparwaiz1/cmp_luasnip",
