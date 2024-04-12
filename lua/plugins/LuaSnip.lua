@@ -7,19 +7,20 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
         },
-        -- build = "make install_jsregexp",
+        build = "make install_jsregexp",
         config = function()
             -- config goes tere
 
             local ls = require("luasnip") --{{{
 
-            require("luasnip.loaders.from_vscode").load()
+            -- require("luasnip.loaders.from_vscode").load()
 
             -- for linux
             require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 
             -- For windows
             -- require("luasnip.loaders.from_lua").load({ paths = "C:/Users/azmain/AppData/Local/nvim/snippets/" })
+            
             require("luasnip").config.setup({ store_selection_keys = "<A-p>" })
 
             vim.cmd([[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]]) --}}}
