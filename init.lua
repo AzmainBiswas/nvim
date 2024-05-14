@@ -23,12 +23,12 @@ require("lazy").setup({
 
 -- set color
 -- set Color Scheme
--- local color = "gruvbox"
+local color = "gruvbox"
 -- local color = "catppuccin-mocha"
 -- local color = "github_dark_default"
 -- local color = "tokyonight-night"
 -- vim.opt.background = "dark"
-local color = "NeoSolarized"
+-- local color = "NeoSolarized"
 vim.cmd.colorscheme(color)
 
 -- disable line number and relative line number in neovim terminal
