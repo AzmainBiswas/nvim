@@ -65,13 +65,14 @@ return {
 	s({ trig = ";G", snippetType = "autosnippet" }, { t("\\Gamma") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";t", snippetType = "autosnippet" }, { t("\\theta") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";T", snippetType = "autosnippet" }, { t("\\Theta") }, { condition = tex_utils.in_mathzone }),
-	s({ trig = ";p", snippetType = "autosnippet" }, { t("\\phi") }, { condition = tex_utils.in_mathzone }),
-	s({ trig = ";P", snippetType = "autosnippet" }, { t("\\pi") }, { condition = tex_utils.in_mathzone }),
+	s({ trig = ";p", snippetType = "autosnippet" }, { t("\\pi") }, { condition = tex_utils.in_mathzone }),
+	s({ trig = ";P", snippetType = "autosnippet" }, { t("\\phi") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";l", snippetType = "autosnippet" }, { t("\\lambda") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";L", snippetType = "autosnippet" }, { t("\\Lambda") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";m", snippetType = "autosnippet" }, { t("\\mu") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";e", snippetType = "autosnippet" }, { t("\\epsilon") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ";s", snippetType = "autosnippet" }, { t("\\sigma") }, { condition = tex_utils.in_mathzone }),
+	s({ trig = ";r", snippetType = "autosnippet" }, { t("\\rho") }, { condition = tex_utils.in_mathzone }),
 
 	-- sets
 	s({ trig = "NN", snippetType = "autosnippet" }, { t("\\mathds{N}") }, { condition = tex_utils.in_mathzone }),
@@ -83,6 +84,7 @@ return {
 	s({ trig = "infty", snippetType = "autosnippet" }, { t("\\infty") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = "<=", snippetType = "autosnippet" }, { t("\\le") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = ">=", snippetType = "autosnippet" }, { t("\\ge") }, { condition = tex_utils.in_mathzone }),
+	s({ trig = "!=", snippetType = "autosnippet" }, { t("\\neq") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = "...", snippetType = "autosnippet" }, { t("\\ldots") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = "sr", snippetType = "autosnippet" }, { t("^{2}") }, { condition = tex_utils.in_mathzone }),
 	s(
@@ -141,7 +143,7 @@ return {
 	),
 
 	s(
-		{ trig = "beg", snippetType = "autosnippet" },
+		{ trig = "bgn", snippetType = "autosnippet" },
 		fmta(
 			[[
       \begin{<>}
