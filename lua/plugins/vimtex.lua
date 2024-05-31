@@ -6,7 +6,7 @@ return {
         -- vim.g.vimtex_compiler_method = 'latex'
         vim.g.tex_flavor = "latex"
         vim.g.vimtex_quickfix_mode = 0
-        vim.opt.conceallevel = 1
+        -- vim.opt.conceallevel = 1
         vim.g.tex_conceal = "abdmg"
 
         -- for windows

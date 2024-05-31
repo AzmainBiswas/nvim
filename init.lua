@@ -32,7 +32,7 @@ local color = "doom-one"
 vim.cmd.colorscheme(color)
 
 -- for doom one only
-vim.cmd[[TransparentEnable]]
+-- vim.cmd[[TransparentEnable]]
 
 -- disable line number and relative line number in neovim terminal
 vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
