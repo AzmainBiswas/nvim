@@ -23,9 +23,9 @@ require("lazy").setup({
 
 -- set color
 -- set Color Scheme
-local color = "doom-one"
+-- local color = "doom-one"
 -- local color = "gruvbox"
--- local color = "catppuccin-mocha"
+local color = "catppuccin-mocha"
 -- local color = "github_dark_default"
 -- local color = "tokyonight-night"
 -- vim.opt.background = "dark"
@@ -38,7 +38,7 @@ vim.cmd.colorscheme(color)
 vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
 
 -- custome status line
-require("custom.statusline")
+-- require("custom.statusline")
 
 -- global status line for all pains
 vim.o.laststatus = 3
