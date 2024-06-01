@@ -21,18 +21,14 @@ require("lazy").setup({
     change_detection = { notify = false },
 })
 
--- set color
 -- set Color Scheme
--- local color = "doom-one"
 -- local color = "gruvbox"
-local color = "catppuccin-mocha"
+-- local color = "catppuccin-mocha"
 -- local color = "github_dark_default"
 -- local color = "tokyonight-night"
+local color = "onedark"
 -- vim.opt.background = "dark"
 vim.cmd.colorscheme(color)
-
--- for doom one only
--- vim.cmd[[TransparentEnable]]
 
 -- disable line number and relative line number in neovim terminal
 vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
