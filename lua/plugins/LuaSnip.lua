@@ -1,13 +1,20 @@
 return {
     {
         "l3mon4d3/luasnip",
-        build = "make install_jsregexp",
+        build = (function()
+          -- Build Step is needed for regex support in snippets.
+          -- This step is not supported in many windows environments.
+          -- Remove the below condition to re-enable on windows.
+          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+            return
+          end
+          return 'make install_jsregexp'
+        end)(),
         dependencies = {
             "hrsh7th/nvim-cmp",
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
         },
-        build = "make install_jsregexp",
         config = function()
             -- config goes tere
 
@@ -20,7 +27,7 @@ return {
 
             -- For windows
             -- require("luasnip.loaders.from_lua").load({ paths = "C:/Users/azmain/AppData/Local/nvim/snippets/" })
-            
+
             require("luasnip").config.setup({ store_selection_keys = "<A-p>" })
 
             vim.cmd([[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]]) --}}}
