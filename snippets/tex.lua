@@ -86,7 +86,11 @@ return {
 	s({ trig = ">=", snippetType = "autosnippet" }, { t("\\ge") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = "!=", snippetType = "autosnippet" }, { t("\\neq") }, { condition = tex_utils.in_mathzone }),
 	s({ trig = "...", snippetType = "autosnippet" }, { t("\\ldots") }, { condition = tex_utils.in_mathzone }),
-	s({ trig = "sr", snippetType = "autosnippet" }, { t("^{2}") }, { condition = tex_utils.in_mathzone }),
+	s(
+		{ trig = "sr", snippetType = "autosnippet", wordTrig = false },
+		{ t("^{2}") },
+		{ condition = tex_utils.in_mathzone }
+	),
 	s(
 		{ trig = "//", snippetType = "autosnippet", wordTrig = false },
 		fmta("\\frac{<>}{<>}", { i(1), i(2) }),

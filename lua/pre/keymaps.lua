@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 -- vim.keymap.set("n", "<CR>", ":")
 vim.keymap.set("n", "<C-b>", "<CMD>Ex<CR>")
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>") -- escep from terminla mode
-vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." } )
+-- vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." } )
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end , { desc = "sorce current file." })
