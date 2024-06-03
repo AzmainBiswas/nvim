@@ -34,7 +34,7 @@ vim.cmd.colorscheme(color)
 vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
 
 -- custome status line
--- require("custom.statusline")
+require("custom.statusline")
 
 -- global status line for all pains
 vim.o.laststatus = 3
