@@ -66,4 +66,4 @@ local winbar = {
 }
 
 vim.o.statusline = table.concat(statusline, "")
--- vim.o.winbar = table.concat(winbar, "")
+--vim.o.winbar = table.concat(winbar, "")

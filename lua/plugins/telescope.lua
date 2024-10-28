@@ -24,8 +24,8 @@ return {
                 pickers = {
                     find_files = { theme = "dropdown" },
                     fd = { theme = "dropdown" },
-                    buffers = { theme = "ivy" },
-                    current_buffer_fuzzy_find = { theme = "ivy" },
+                    buffers = { theme = "dropdown" },
+                    current_buffer_fuzzy_find = { theme = "dropdown" },
                     live_grep = { theme = "dropdown" },
                 },
             })

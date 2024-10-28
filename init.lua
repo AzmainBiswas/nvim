@@ -27,7 +27,7 @@ require("lazy").setup({
 -- local color = "github_dark_default"
 local color = "tokyonight-night"
 -- local color = "onedark"
--- vim.opt.background = "dark"
+vim.opt.background = "dark"
 vim.cmd.colorscheme(color)
 
 -- disable line number and relative line number in neovim terminal

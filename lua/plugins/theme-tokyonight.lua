@@ -4,7 +4,7 @@ return {
     config = function()
         require("tokyonight").setup({
             style = "night",
-            transparent = true,
+            transparent = false,
             styles = {
                 comments = { italic = true },
                 functions = {},
