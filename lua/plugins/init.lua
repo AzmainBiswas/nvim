@@ -1,13 +1,22 @@
 return {
 	{ "nvim-lua/plenary.nvim" },
 
-	-- LSP progress messages.
-	{
+	--[[ auto pairs ]]
+	--[[ {
+		"echasnovski/mini.pairs",
+		version = "*",
+		config = function()
+			require("mini.pairs").setup()
+		end,
+	}, ]]
+	--[[ LSP progress messages ]]
+	--[[ {
 		"j-hui/fidget.nvim",
 		config = function()
 			require("fidget").setup({})
 		end,
-	},
+	}, ]]
+
 	{
 		"numToStr/Comment.nvim",
 		lazy = false,
@@ -15,14 +24,16 @@ return {
 			require("Comment").setup()
 		end,
 	},
-	-- { -- Highlight todo, notes, etc in comments
-	-- 	"folke/todo-comments.nvim",
-	-- 	event = "VimEnter",
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	opts = { signs = false },
-	-- },
+	--[[ Highlight todo, notes, etc in comments ]]
+	--[[ {
+		"folke/todo-comments.nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = { signs = false },
+	}, ]]
 
-	{ -- git decorations implemented purely in Lua
+	--[[ git decorations implemented purely in Lua ]]
+	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
