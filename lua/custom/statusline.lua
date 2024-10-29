@@ -24,7 +24,7 @@ local modes = {
 -- mode in statusline
 function Mode()
 	local current_mode = vim.api.nvim_get_mode().mode
-	return string.format("%s", modes[current_mode]):upper()
+	return string.format("[%s]", modes[current_mode]):upper()
 end
 
 -- Function to get Git branch
@@ -53,8 +53,7 @@ local statusline = {
 	" %m",
 
 	"%=", -- right
-    "b:%n ",
-	"%l/%L ",
+	"[%l:%L,%c-%v] ",
 	"%p%% ",
 	"%y ",
 }
