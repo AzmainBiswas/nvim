@@ -22,8 +22,8 @@ require("lazy").setup({
 })
 
 -- set Color Scheme
--- local color = "gruvbox"
-local color = "catppuccin-mocha"
+local color = "gruvbox"
+-- local color = "catppuccin-mocha"
 -- local color = "github_dark_default"
 -- local color = "habamax"
 -- local color = "tokyonight-night"

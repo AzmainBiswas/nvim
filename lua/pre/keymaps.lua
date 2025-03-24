@@ -7,7 +7,7 @@ vim.keymap.set("t", "<ESC>", "<C-\\><C-n>") -- escep from terminla mode
 vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." })
 
 vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
+    vim.cmd("so")
 end, { desc = "sorce current file." })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -25,16 +25,16 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- compile commands
-vim.keymap.set({ "i", "n" }, "<C-c>", function ()
-	vim.cmd("write")
-	vim.cmd("make")
-	vim.cmd("cwindow")
+vim.keymap.set({ "i", "n" }, "<C-c>", function()
+    vim.cmd("write")
+    vim.cmd("make")
+    vim.cmd("cwindow")
 end, { desc = "Compile and Open Quickfix" })
 
 vim.keymap.set({ "n", "i" }, "<F5>", function()
-	vim.cmd("write")
-	vim.cmd("make")
-	vim.cmd("cwindow")
+    vim.cmd("write")
+    vim.cmd("make")
+    vim.cmd("cwindow")
 end, { desc = "Compile and Open Quickfix" })
 
 vim.keymap.set("n", "<leader>co", "<ESC><CMD>copen<CR>", { desc = "open Quickfix" })
@@ -59,3 +59,12 @@ vim.keymap.set("n", "<C-Down>", "<C-w><C-j>")
 -- vim.keymap.set("i", "[", "[]<left>")
 -- vim.keymap.set("i", "(", "()<left>")
 -- vim.keymap.set("i", "{", "{}<left>")
+vim.cmd [[
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+]]
