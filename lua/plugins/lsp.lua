@@ -37,10 +37,15 @@ return {
             local lsp_zero = require("lsp-zero")
             -- config for lsp-zero
             lsp_zero.on_attach(function(client, bufnr)
-
                 vim.keymap.set("n", "gd", function()
                     vim.lsp.buf.definition()
                 end, { desc = "go to difinition", buffer = bufnr, remap = false })
+
+                vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+                    { desc = "Find References", buffer = bufnr, remap = false })
+
+                vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end,
+                    { desc = "Find References", buffer = bufnr, remap = false })
 
                 vim.keymap.set("n", "K", function()
                     vim.lsp.buf.hover()
@@ -62,9 +67,10 @@ return {
                     vim.diagnostic.goto_prev()
                 end, { desc = "goto previous", buffer = bufnr, remap = false })
 
-                vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, { desc = "Code Action", buffer = bufnr, remap = false })
-                vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { desc = "Find References", buffer = bufnr, remap = false })
-                vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, { desc = "Rename", buffer = bufnr, remap = false })
+                vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+                    { desc = "Code Action", buffer = bufnr, remap = false })
+                vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
+                    { desc = "Rename", buffer = bufnr, remap = false })
                 vim.keymap.set("i", "<C-h>", function()
                     vim.lsp.buf.signature_help()
                 end, { desc = "signature_help", buffer = bufnr, remap = false })
