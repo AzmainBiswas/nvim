@@ -71,6 +71,8 @@ return {
                     { desc = "Code Action", buffer = bufnr, remap = false })
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
                     { desc = "Rename", buffer = bufnr, remap = false })
+                vim.keymap.set("n", "cd", function() vim.lsp.buf.rename() end,
+                    { desc = "Rename", buffer = bufnr, remap = false })
                 vim.keymap.set("i", "<C-h>", function()
                     vim.lsp.buf.signature_help()
                 end, { desc = "signature_help", buffer = bufnr, remap = false })
