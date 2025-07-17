@@ -50,9 +50,7 @@ return {
                 "<cmd>Telescope current_buffer_fuzzy_find<CR>",
                 { desc = "Fuzzy find in the opened buffer" }
             )
-            vim.keymap.set("n", "<C-p>", function()
-                vim.cmd("Telescope fd")
-            end, { desc = "Find Files" })
+            vim.keymap.set("n", "<C-p>", builtin.fd, { desc = "Find Files" })
         end, -- config ends here
     },
 }

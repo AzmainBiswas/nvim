@@ -61,18 +61,18 @@ return {
 
                 vim.keymap.set("n", "[d", function()
                     vim.diagnostic.goto_next()
-                end, { desc = "goto next", buffer = bufnr, remap = false })
+                end, { desc = "goto next diagnostic", buffer = bufnr, remap = false })
 
                 vim.keymap.set("n", "]d", function()
                     vim.diagnostic.goto_prev()
-                end, { desc = "goto previous", buffer = bufnr, remap = false })
+                end, { desc = "goto previous diagnostic", buffer = bufnr, remap = false })
 
                 vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
                     { desc = "Code Action", buffer = bufnr, remap = false })
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
                     { desc = "Rename", buffer = bufnr, remap = false })
                 vim.keymap.set("n", "cd", function() vim.lsp.buf.rename() end,
-                    { desc = "Rename", buffer = bufnr, remap = false })
+                    { desc = "Rename [change definition]", buffer = bufnr, remap = false })
                 vim.keymap.set("i", "<C-h>", function()
                     vim.lsp.buf.signature_help()
                 end, { desc = "signature_help", buffer = bufnr, remap = false })

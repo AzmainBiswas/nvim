@@ -31,6 +31,11 @@ local color = "gruvbox"
 vim.opt.background = "dark"
 vim.cmd.colorscheme(color)
 
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+
+--
 -- disable line number and relative line number in neovim terminal
 vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
 
@@ -38,4 +43,4 @@ vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
 require("custom.statusline")
 
 -- global status line for all pains
-vim.o.laststatus = 3
+vim.o.laststatus = 2

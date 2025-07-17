@@ -48,12 +48,13 @@ local statusline = {
 	" %{v:lua.Get_git_branch()}",
 
 	"%=", -- middle
-	" %f",
-	" %r",
-	" %m",
+	"%F", -- f / t / F
+	"%r",
+	"%m",
+    "%h",
 
 	"%=", -- right
-	"[%l:%L,%c-%v] ",
+	"[L:%l/%L] ",
 	"%p%% ",
 	"%y ",
 }
