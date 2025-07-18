@@ -44,9 +44,9 @@ vim.keymap.set("n", "<leader>qp", "<ESC><CMD>cprevious<CR>", { desc = "prev Quic
 vim.keymap.set("n", "<leader>ss", "<CMD>set spell!<CR>", { desc = "set spell" })
 
 -- custome function floating terminal
-vim.keymap.set('n', '<leader>t', function () vim.cmd("FloTerm") end, { desc = 'floating terminal' })
+vim.keymap.set('n', '<leader>t', function() vim.cmd("FloTerm") end, { desc = 'floating terminal' })
 
-vim.keymap.set("n", "<leader>cp", function ()
+vim.keymap.set("n", "<leader>cp", function()
     local path = vim.fn.expand("%:p")
     vim.fn.setreg("+", path)
     print("file: " .. path)
@@ -63,6 +63,47 @@ vim.keymap.set("n", "<C-Left>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-Right>", "<C-w><C-L>")
 vim.keymap.set("n", "<C-Up>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-Down>", "<C-w><C-j>")
+
+-- lsp maps
+vim.keymap.set("n", "gd", function()
+    vim.lsp.buf.definition()
+end, { desc = "go to difinition", silent = true, remap = false })
+
+vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+    { desc = "Find References", silent = true, remap = false })
+
+vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end,
+    { desc = "Find References", silent = true, remap = false })
+
+vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover()
+end, { desc = "Peck difinition", silent = true, remap = false })
+
+vim.keymap.set("n", "<leader>vws", function()
+    vim.lsp.buf.workspace_symbol()
+end, { desc = "workspace_symbol", silent = true, remap = false })
+
+vim.keymap.set("n", "<leader>vd", function()
+    vim.diagnostic.open_float()
+end, { desc = "open_float", silent = true, remap = false })
+
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.goto_next()
+end, { desc = "goto next", silent = true, remap = false })
+
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.goto_prev()
+end, { desc = "goto previous", silent = true, remap = false })
+
+vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+    { desc = "Code Action", silent = true, remap = false })
+vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
+    { desc = "Rename", silent = true, remap = false })
+vim.keymap.set("n", "cd", function() vim.lsp.buf.rename() end,
+    { desc = "Rename", silent = true, remap = false })
+vim.keymap.set("i", "<C-h>", function()
+    vim.lsp.buf.signature_help()
+end, { desc = "signature_help", silent = true, remap = false })
 
 -- some kymaps
 -- vim.keymap.set("i", "[", "[]<left>")
