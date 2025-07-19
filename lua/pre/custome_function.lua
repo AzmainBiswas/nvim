@@ -24,23 +24,34 @@ local augroup = vim.api.nvim_create_augroup("UserConfig", {})
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = 'Highlight when yanking text',
     group = augroup,
     callback = function()
         vim.highlight.on_yank()
     end
 })
 
--- Return to last edited position when opening a file
-vim.api.nvim_create_autocmd("BufReadPost", {
+-- disable line number and relative line number in neovim terminal
+vim.api.nvim_create_autocmd("TermOpen", {
     group = augroup,
-    callback = function()
-        local mark = vim.api.nvim_buf_get_mark(0, '"')
-        local lcount = vim.api.nvim_buf_line_count(0)
-        if mark[1] > 0 and mark[1] <= lcount then
-            pcall(vim.api.nvim_win_set_cursor, 0, mark)
-        end
+    callback = function ()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+        vim.api.nvim_feedkeys("i", "n", false)  -- Enter insert mode
     end
 })
+
+-- Return to last edited position when opening a file
+-- vim.api.nvim_create_autocmd("BufReadPost", {
+--     group = augroup,
+--     callback = function()
+--         local mark = vim.api.nvim_buf_get_mark(0, '"')
+--         local lcount = vim.api.nvim_buf_line_count(0)
+--         if mark[1] > 0 and mark[1] <= lcount then
+--             pcall(vim.api.nvim_win_set_cursor, 0, mark)
+--         end
+--     end
+-- })
 
 -- floating terminal
 local term_state = {

@@ -35,9 +35,7 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 
--- disable line number and relative line number in neovim terminal
-vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
-
+-- vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
 -- custome status line
 require("custom.statusline")
 
