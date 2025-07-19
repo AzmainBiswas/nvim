@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     callback = function ()
         vim.opt_local.number = false
         vim.opt_local.relativenumber = false
-        vim.api.nvim_feedkeys("i", "n", false)  -- Enter insert mode
+        vim.api.nvim_feedkeys("i", "n", false)  -- Map normal mode to insert mode
     end
 })
 
