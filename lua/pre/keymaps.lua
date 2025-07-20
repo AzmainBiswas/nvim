@@ -25,9 +25,9 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- compile commands
-vim.keymap.set({ "i", "n" }, "<leader>e", function()
+vim.keymap.set("n", "<leader>e", function()
     vim.cmd("Ex")
-end, { desc = "Compile and Open Quickfix" })
+end, { desc = "open file exploer" })
 
 vim.keymap.set({ "n", "i" }, "<F5>", function()
     vim.cmd("write")
