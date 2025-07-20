@@ -8,7 +8,7 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
+        "l3mon4d3/luasnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
