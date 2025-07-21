@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 -- vim.keymap.set("n", "<CR>", ":")
 -- vim.keymap.set("n", "<C-b>", "<CMD>Ex<CR>")
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode
-vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." })
+-- vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." })
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
@@ -45,6 +45,7 @@ vim.keymap.set("n", "<leader>ss", "<CMD>set spell!<CR>", { desc = "set spell" })
 
 -- custome function floating terminal
 vim.keymap.set('n', '<leader>t', function() vim.cmd("FloTerm") end, { desc = 'floating terminal' })
+vim.keymap.set('n', '<leader>oc', function() vim.cmd("e ~/.config/nvim/") end, { desc = 'open vim config file' })
 
 vim.keymap.set("n", "<leader>cp", function()
     local path = vim.fn.expand("%:p")
