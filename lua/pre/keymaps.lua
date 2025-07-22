@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>qn", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix
 vim.keymap.set("n", "<leader>qp", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
 
 -- spell checker
-vim.keymap.set("n", "<leader>ss", "<CMD>set spell!<CR>", { desc = "set spell" })
+vim.keymap.set("n", "<leader>ss", "<CMD>:setlocal spell! spelllang=en_us<CR>", { desc = "set spell" })
 
 -- custome function floating terminal
 vim.keymap.set('n', '<leader>t', function() vim.cmd("FloTerm") end, { desc = 'floating terminal' })

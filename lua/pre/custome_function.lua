@@ -41,6 +41,16 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end
 })
 
+-- open spell checker in some files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    group = augroup,
+    pattern = { "*.md", ".txt" },
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = "en_us"
+    end,
+})
+
 -- Return to last edited position when opening a file
 vim.api.nvim_create_autocmd("BufReadPost", {
     group = augroup,
