@@ -39,6 +39,7 @@ vim.keymap.set("n", "<leader>qo", "<ESC><CMD>copen<CR>", { desc = "open Quickfix
 vim.keymap.set("n", "<leader>qq", "<ESC><CMD>cclose<CR>", { desc = "close Quickfix" })
 vim.keymap.set("n", "<leader>qn", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
 vim.keymap.set("n", "<leader>qp", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
+vim.keymap.set("n", "<leader>qe", function() vim.diagnostic.setqflist() end, { desc = "prev Quickfix" })
 
 -- spell checker
 vim.keymap.set("n", "<leader>ss", "<CMD>:setlocal spell! spelllang=en_us<CR>", { desc = "set spell" })
