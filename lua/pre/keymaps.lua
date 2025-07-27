@@ -46,7 +46,6 @@ vim.keymap.set("n", "<leader>ss", "<CMD>:setlocal spell! spelllang=en_us<CR>", {
 
 -- custome function floating terminal
 vim.keymap.set('n', '<leader>oc', function() vim.cmd("e ~/.config/nvim/") end, { desc = 'open vim config file' })
-vim.keymap.set('n', '<leader>tf', function() vim.cmd("FloTerm") end, { desc = 'floating terminal' })
 
 vim.keymap.set("n", "<leader>cp", function()
     local path = vim.fn.expand("%:p")
@@ -65,6 +64,14 @@ vim.keymap.set("n", "<C-Left>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-Right>", "<C-w><C-L>")
 vim.keymap.set("n", "<C-Up>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-Down>", "<C-w><C-j>")
+
+vim.keymap.set('n', '<leader>tf', function() vim.cmd("FloTerm") end, { desc = 'floating terminal' })
+vim.keymap.set('n', '<leader>tt', function()
+    vim.cmd.vnew()
+    vim.cmd.terminal()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0, 15)
+end, { desc = 'terminal' })
 
 -- some kymaps
 -- vim.keymap.set("i", "[", "[]<left>")
