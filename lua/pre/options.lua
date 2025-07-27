@@ -30,6 +30,7 @@ vim.opt.smartcase = true
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
+-- vim.opt.winborder = "rounded"
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "100"

@@ -78,7 +78,7 @@ vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end,
     { desc = "Find References", silent = true, remap = false })
 
 vim.keymap.set("n", "K", function()
-    vim.lsp.buf.hover()
+    vim.lsp.buf.hover({ border = "rounded" })
 end, { desc = "Peck difinition", silent = true, remap = false })
 
 vim.keymap.set("n", "<leader>vws", function()

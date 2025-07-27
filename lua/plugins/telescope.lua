@@ -22,11 +22,11 @@ return {
                     },
                 },
                 pickers = {
-                    -- find_files = { theme = "ivy" },
-                    -- fd = { theme = "ivy" },
+                    find_files = { theme = "ivy" },
+                    fd = { theme = "ivy" },
                     -- buffers = { theme = "dropdown" },
                     -- current_buffer_fuzzy_find = { theme = "dropdown" },
-                    -- live_grep = { theme = "cursor" },
+                    live_grep = { theme = "ivy" },
                 },
             })
 
