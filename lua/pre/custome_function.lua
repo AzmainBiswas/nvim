@@ -27,7 +27,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     desc = 'Highlight when yanking text',
     group = augroup,
     callback = function()
-        vim.highlight.on_yank()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            -- timeout = 40,
+        })
     end
 })
 
@@ -53,53 +56,41 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
--- floating terminal
-local term_state = {
-    floating = {
-        buf = -1,
-        win = -1,
-    }
-}
 
-local function create_floating_window(opts)
-    opts = opts or {}
-    local width = opts.width or math.floor(vim.o.columns * 0.6)
-    local height = opts.height or math.floor(vim.o.lines * 0.6)
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = augroup,
+    callback = function(e)
+        local buf = e.buf
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
+            { desc = "go to difinition", silent = true, remap = false, buffer = buf })
+        vim.keymap.set("n", "cd", function() vim.lsp.buf.rename() end,
+            { desc = "Rename", silent = true, remap = false, buffer = buf })
+        vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+            { desc = "Find References", silent = true, remap = false, buffer = buf })
 
+        vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end,
+            { desc = "Find References", silent = true, remap = false, buffer = buf })
 
-    -- Center the window
-    local col = math.floor((vim.o.columns - width) / 2)
-    local row = math.floor((vim.o.lines - height) / 2)
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "rounded" }) end,
+            { desc = "Peck difinition", silent = true, remap = false, buffer = buf })
 
-    -- Create a new buffer (not listed)
-    local buf = nil
-    if vim.api.nvim_buf_is_valid(opts.buf) then
-        buf = opts.buf
-    else
-        buf = vim.api.nvim_create_buf(false, true)
+        vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end,
+            { desc = "workspace_symbol", silent = true, remap = false, buffer = buf })
+
+        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
+            { desc = "open_float", silent = true, remap = false, buffer = buf })
+
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
+            { desc = "goto next", silent = true, remap = false, buffer = buf })
+
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
+            { desc = "goto previous", silent = true, remap = false, buffer = buf })
+
+        vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+            { desc = "Code Action", silent = true, remap = false, buffer = buf })
+        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
+            { desc = "Rename", silent = true, remap = false, buffer = buf })
+        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
+            { desc = "signature_help", silent = true, remap = false, buffer = buf })
     end
-
-    -- Open the floating window
-    local win = vim.api.nvim_open_win(buf, true, {
-        relative = 'editor',
-        width = width,
-        height = height,
-        col = col,
-        row = row,
-        style = 'minimal',
-        border = 'rounded',
-    })
-
-    return { buf = buf, win = win }
-end
-
-vim.api.nvim_create_user_command("FloTerm", function()
-    if not vim.api.nvim_win_is_valid(term_state.floating.win) then
-        term_state.floating = create_floating_window({ buf = term_state.floating.buf })
-        if vim.bo[term_state.floating.buf].buftype ~= "terminal" then
-            vim.cmd.terminal()
-        end
-    else
-        vim.api.nvim_win_hide(term_state.floating.win)
-    end
-end, {})
+})
