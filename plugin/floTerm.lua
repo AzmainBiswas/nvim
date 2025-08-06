@@ -48,3 +48,6 @@ vim.api.nvim_create_user_command("FloTerm", function()
         vim.api.nvim_win_hide(term_state.floating.win)
     end
 end, {})
+
+
+vim.keymap.set('n', '<leader>tf', function() vim.cmd("FloTerm") end, { desc = 'floating terminal' })

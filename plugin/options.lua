@@ -35,6 +35,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "100"
 
+vim.opt.title = true
+vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
+
 -- netrw
 -- disable netrw at the very start of your init.lua
 -- vim.g.loaded_netrw = 1

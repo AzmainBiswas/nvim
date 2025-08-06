@@ -1,2 +1,2 @@
--- vim.opt_local.makeprg = "go run ."
+vim.opt_local.makeprg = "go run ."
 vim.cmd("compiler go")

@@ -44,7 +44,7 @@ function Get_git_branch()
 end
 
 local statusline = {
-	" %{v:lua.Mode()}",
+	-- " %{v:lua.Mode()}",
 	" %{v:lua.Get_git_branch()}",
 
 	"%=", -- middle

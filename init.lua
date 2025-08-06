@@ -1,5 +1,5 @@
--- pre load
-require("pre")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- lazy packagemannager plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,14 +16,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- plugins
-require("lazy").setup({
-    spec = "plugins",
+require("lazy").setup({ import = "plugins" }, {
     change_detection = { notify = false },
 })
 
 -- set Color Scheme
-local color = "gruvbox"
--- local color = "nord"
+-- local color = "gruvbox"
+local color = "nord"
 -- local color = "catppuccin-mocha"
 -- local color = "github_dark_default"
 -- local color = "habamax"
@@ -35,10 +34,8 @@ vim.cmd.colorscheme(color)
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
- 
+
 -- vim.cmd([[ autocmd TermOpen * setlocal nonumber norelativenumber ]])
--- custome status line
-require("custom.statusline")
 
 -- global status line for all pains
 vim.o.laststatus = 2

@@ -10,6 +10,13 @@ return {
         end,
     },
     {
+        'echasnovski/mini.statusline',
+        version = '*',
+        config = function()
+            require("mini.statusline").setup()
+        end
+    },
+    {
         "numToStr/Comment.nvim",
         lazy = false,
         config = function()
