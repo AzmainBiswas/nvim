@@ -1,1 +1,1 @@
-This is my neovim config file. Simple but mine.
+I Love neovim
