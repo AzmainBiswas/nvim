@@ -1,6 +1,7 @@
 -- vim.keymap.set("n", "<CR>", ":")
 -- vim.keymap.set("n", "<C-b>", "<CMD>Ex<CR>")
 -- vim.keymap.set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." })
+vim.keymap.set({ "i", "n", "s" }, "<C-x><C-s>", "<ESC><CMD>wa<ESC>", { desc = "Save File" })
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

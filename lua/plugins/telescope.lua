@@ -22,11 +22,11 @@ return {
                     },
                 },
                 pickers = {
-                    find_files = { theme = "ivy" },
-                    fd = { theme = "ivy" },
+                    -- find_files = { theme = "ivy" },
+                    -- fd = { theme = "ivy" },
                     -- buffers = { theme = "dropdown" },
                     -- current_buffer_fuzzy_find = { theme = "dropdown" },
-                    live_grep = { theme = "ivy" },
+                    -- live_grep = { theme = "ivy" },
                 },
             })
 
@@ -40,17 +40,10 @@ return {
             vim.keymap.set("n", "<leader>fc", builtin.colorscheme, { desc = "change colorscheme" })
             vim.keymap.set(
                 "n",
-                "<C-f>",
-                "<cmd>Telescope current_buffer_fuzzy_find<CR>",
-                { desc = "Fuzzy find in the opened buffer" }
-            )
-            vim.keymap.set(
-                "n",
                 "<leader>fs",
                 "<cmd>Telescope current_buffer_fuzzy_find<CR>",
                 { desc = "Fuzzy find in the opened buffer" }
             )
-            vim.keymap.set("n", "<C-p>", builtin.fd, { desc = "Find Files" })
         end, -- config ends here
     },
 }

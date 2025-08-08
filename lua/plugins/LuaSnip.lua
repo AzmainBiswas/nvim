@@ -1,6 +1,6 @@
 return {
     {
-        "l3mon4d3/luasnip",
+        "l3mon4d3/LuaSnip",
         build = (function()
           -- Build Step is needed for regex support in snippets.
           -- This step is not supported in many windows environments.
@@ -104,7 +104,7 @@ return {
                 { silent = true, noremap = true }
             )
             -- vim.keymap.set('n', '<Leader>ls', "<cmd>so C:/Users/azmain/AppData/Local/nvim/plugin/luasnip.lua<CR>")
-            vim.keymap.set("n", "<Leader>ls", "<cmd>so ~/.config/nvim/lua/biswas/plugins/LuaSnip.lua<CR>")
+            vim.keymap.set("n", "<Leader>ls", "<cmd>so ~/.config/nvim/lua/plugins/LuaSnip.lua<CR>")
             vim.cmd(
                 [[autocmd BufEnter */snippets/*.lua nnoremap <silent> <buffer> <CR> /-- End Refactoring --<CR>O<Esc>O]]
             )
