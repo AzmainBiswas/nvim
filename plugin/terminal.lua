@@ -1,4 +1,4 @@
-local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+local augroup = vim.api.nvim_create_augroup("TermConfig", {})
 
 -- disable line number and relative line number in neovim terminal
 vim.api.nvim_create_autocmd("TermOpen", {
