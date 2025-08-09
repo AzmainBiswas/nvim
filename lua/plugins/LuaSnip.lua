@@ -2,18 +2,17 @@ return {
     {
         "l3mon4d3/LuaSnip",
         build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
+            -- Build Step is needed for regex support in snippets.
+            -- This step is not supported in many windows environments.
+            -- Remove the below condition to re-enable on windows.
+            if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+                return
+            end
+            return 'make install_jsregexp'
         end)(),
         dependencies = {
-            "hrsh7th/nvim-cmp",
-            "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
+            'saghen/blink.cmp',
         },
         config = function()
             -- config goes tere
@@ -35,7 +34,7 @@ return {
             -- Virtual Text{{{
             local types = require("luasnip.util.types")
             ls.config.set_config({
-                history = true,                --keep around last snippet local to jump back
+                history = true,                            --keep around last snippet local to jump back
                 updateevents = "TextChanged,TextChangedI", --update changes as you type
                 enable_autosnippets = true,
                 store_selection_keys = "<Tab>",
@@ -49,11 +48,11 @@ return {
             }) --}}}
 
             -- Key Mapping --{{{
-            -- vim.keymap.set({ "i", "s" }, "<a-p>", function()
-            -- 	if ls.expand_or_jumpable() then
-            -- 		ls.expand()
-            -- 	end
-            -- end, { silent = true })
+            vim.keymap.set({ "i", "s" }, "<a-p>", function()
+            	if ls.expand_or_jumpable() then
+            		ls.expand()
+            	end
+            end, { silent = true })
 
             vim.keymap.set({ "i", "s" }, "<C-k>", function()
                 if ls.expand_or_jumpable() then

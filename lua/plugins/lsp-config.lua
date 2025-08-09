@@ -3,7 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "l3mon4d3/luasnip",
+        "l3mon4d3/LuaSnip",
         "j-hui/fidget.nvim",
     },
 
@@ -47,5 +47,6 @@ return {
                 prefix = "",
             },
         })
+
     end
 }
