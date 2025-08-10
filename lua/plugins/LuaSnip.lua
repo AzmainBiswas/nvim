@@ -37,7 +37,7 @@ return {
                 history = true,                            --keep around last snippet local to jump back
                 updateevents = "TextChanged,TextChangedI", --update changes as you type
                 enable_autosnippets = true,
-                store_selection_keys = "<Tab>",
+                -- store_selection_keys = "<Tab>",
                 ext_opts = {
                     [types.choiceNode] = {
                         active = {
