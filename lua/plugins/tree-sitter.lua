@@ -10,11 +10,11 @@ return {
                 auto_install = true,
                 sync_install = false,
                 highlight = {
-                    additional_vim_regex_highlighting = false,
-                    enable = false
+                    additional_vim_regex_highlighting = true,
+                    enable = true
                 },
 
-                indent = { enable = false },
+                indent = { enable = true },
             })
         end,
     }

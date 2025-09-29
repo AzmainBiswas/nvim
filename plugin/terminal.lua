@@ -12,11 +12,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end
 })
 
-vim.keymap.set('n', '<leader>tt', function()
+vim.keymap.set('n', '<C-`>', function()
     vim.cmd.vnew()
     vim.cmd.terminal()
     vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 15)
+    vim.api.nvim_win_set_height(0, 12)
 end, { desc = 'terminal' })
 
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode

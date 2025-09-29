@@ -52,4 +52,4 @@ g.netrw_browse_split = 0
 g.netrw_banner = 0
 g.netrw_winsize = 25
 
-opt.guicursor = "a:block" -- "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr:hor20-Cursor,o:hor50"
+-- opt.guicursor = "a:block" -- "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr:hor20-Cursor,o:hor50"
