@@ -31,6 +31,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.complete = '.,w,b,u,t,F,k,s'
 vim.opt.completeopt = 'menu,menuone,fuzzy,noinsert'
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 

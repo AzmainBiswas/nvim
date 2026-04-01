@@ -26,6 +26,18 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = augroup,
+    callback = function(arg)
+        local client = assert(vim.lsp.get_client_by_id(arg.data.client_id))
+        if client:supports_method('textDocument/formatting') then
+            vim.opt.complete = 'o,.,w,b,u,t,F,k,s'
+            vim.opt.completeopt = 'menu,menuone,popup,noinsert,fuzzy'
+            vim.lsp.completion.enable(true, client.id, arg.buf)
+        end
+    end
+})
+
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --     group = augroup,
 --     callback = function(e)

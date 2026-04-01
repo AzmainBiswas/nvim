@@ -1,8 +1,8 @@
 local set = vim.keymap.set
 -- set("n", "<CR>", ":")
 -- set("n", "<C-b>", "<CMD>Ex<CR>")
-set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." })
-set({ "i", "n", "s" }, "<C-x><C-s>", "<ESC><CMD>wa<ESC>", { desc = "Save File" })
+-- set({ "n", "i", "s" }, "<C-S>", "<ESC><CMD>wa<CR>", { desc = "save all files." })
+-- set({ "i", "n", "s" }, "<C-x><C-s>", "<ESC><CMD>wa<ESC>", { desc = "Save File" })
 
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode
 
