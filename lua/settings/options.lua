@@ -37,7 +37,7 @@ vim.opt.grepprg = "rg --vimgrep --smart-case"
 -- Makes neovim and host OS clipboard play nicely with each other
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 vim.opt.winborder = "rounded"
 vim.opt.isfname:append("@-@")
 

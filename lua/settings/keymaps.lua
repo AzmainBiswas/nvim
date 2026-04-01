@@ -6,6 +6,7 @@ set({ "i", "n", "s" }, "<C-x><C-s>", "<ESC><CMD>wa<ESC>", { desc = "Save File" }
 
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode
 
+set("n", "<leader>x", "<CMD>.lua<CR>", { desc = "run current lua file" })
 set("n", "<leader><leader>", function()
     vim.cmd("so")
 end, { desc = "sorce current file." })
@@ -82,8 +83,8 @@ set("n", "<C-Down>", "<C-w><C-j>")
 
 set("n", "grd", function() vim.diagnostic.setqflist() end, { desc = "Quick Fix diagnostic" })
 set("n", "grf", function() vim.lsp.buf.format() end, { desc = "format buffer" })
-set("n", "grl", function () 
+set("n", "grl", function()
     if vim.lsp.inlay_hint then
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end
-end, { desc = "inlay_hint enable"})
+end, { desc = "inlay_hint enable" })

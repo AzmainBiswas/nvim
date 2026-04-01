@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end
 })
 
-vim.keymap.set('n', '<C-`>', function()
+vim.keymap.set('n', '<C-t>', function()
     vim.cmd.vnew()
     vim.cmd.terminal()
     vim.cmd.wincmd("J")
