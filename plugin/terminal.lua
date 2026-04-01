@@ -1,0 +1,20 @@
+local augroup = vim.api.nvim_create_augroup("TermConfig", {})
+
+-- disable line number and relative line number in neovim terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+    group = augroup,
+    callback = function()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+        vim.opt_local.scrolloff = 0
+
+        vim.api.nvim_feedkeys("i", "n", false) -- Map normal mode to insert mode
+    end
+})
+
+vim.keymap.set('n', '<C-`>', function()
+    vim.cmd.vnew()
+    vim.cmd.terminal()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0, 12)
+end, { desc = 'terminal' })
