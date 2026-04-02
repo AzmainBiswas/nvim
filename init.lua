@@ -7,7 +7,9 @@ require("settings.keymaps")
 require("settings.autocmds")
 require("settings.flowterm")
 require("settings.terminal")
+require("settings.vimpack")
 
 vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")
 vim.cmd.packadd("cfilter")
+
