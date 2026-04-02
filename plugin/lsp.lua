@@ -16,8 +16,8 @@ require("mason-lspconfig").setup({
 vim.diagnostic.config({
     update_in_insert = false,
     underline = true,
-    virtual_lines = false,
-    virtual_text = true,
+    virtual_lines = true,
+    virtual_text = false,
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
         if client:supports_method('textDocument/completion') then
             vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-            vim.opt.complete = 'o,.,w,b,u,t'
+            vim.opt.complete = 'o,.,w,b,u'
             vim.opt.completeopt = 'menu,menuone,popup,noinsert,fuzzy'
             vim.lsp.completion.enable(true, client.id, ev.buf)
         end
@@ -34,7 +34,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 ---@type vim.lsp.Config
 local config = {
-    ---@type lspconfig.settings.lua_ls
     settings = {
         Lua = {
             runtime = {
@@ -51,3 +50,5 @@ local config = {
 }
 
 vim.lsp.config('lua_ls', config)
+
+vim.lsp.enable('roslyn_ls')

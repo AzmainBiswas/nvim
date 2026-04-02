@@ -31,16 +31,18 @@ set("n", "<M-.>", "<c-w>5>")
 set("n", "<M-t>", "<C-W>+")
 set("n", "<M-s>", "<C-W>-")
 
--- compile commands
-set("n", "<leader>e", function()
-    vim.cmd("Ex")
-end, { desc = "open file exploer" })
+-- compile commands #using oil
+-- set("n", "<leader>e", function()
+--     vim.cmd("Ex")
+-- end, { desc = "open file exploer" })
 
 set("n", "<leader>qo", "<ESC><CMD>copen<CR>", { desc = "open Quickfix" })
 set("n", "<leader>qq", "<ESC><CMD>cclose<CR>", { desc = "close Quickfix" })
 set("n", "<leader>qn", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
 set("n", "<leader>qp", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
 set("n", "<leader>qe", function() vim.diagnostic.setqflist() end, { desc = "prev Quickfix" })
+set("n", "M-j", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
+set("n", "M-k", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
 
 -- spell checker
 set("n", "<leader>ss", "<CMD>:setlocal spell! spelllang=en_us<CR>", { desc = "set spell" })

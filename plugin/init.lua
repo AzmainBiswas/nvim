@@ -3,6 +3,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.statusline", version = vim.version.range('*') },
     "https://github.com/folke/which-key.nvim",
     "https://github.com/lewis6991/gitsigns.nvim",
+    -- "https://github.com/junegunn/fzf.vim"
 })
 
 require("mini.statusline").setup()

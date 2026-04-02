@@ -1,18 +1,25 @@
 vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("*") },
     "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/nvim-telescope/telescope-ui-select.nvim"
 })
 
 
 --configuration options
 require("telescope").setup({
-  defaults = {
-    preview = {
-      treesitter = false,
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown(),
+        },
     },
-  },
+    defaults = {
+        preview = {
+            treesitter = false,
+        },
+    },
 })
 
+require("telescope").load_extension("ui-select")
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.fd, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Grep word from opened file system" })
