@@ -4,8 +4,8 @@ vim.pack.add({
 
 require("oil").setup({
     columns = {
-        "permissions",
-        "size",
+        -- "permissions",
+        -- "size",
         -- "mtime",
     },
     view_options = {
