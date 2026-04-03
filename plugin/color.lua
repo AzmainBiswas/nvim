@@ -1,10 +1,11 @@
--- vim.pack.add({
+vim.pack.add({
     -- { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
--- })
+    -- "https://github.com/folke/tokyonight.nvim"
+})
 
 vim.opt.background = "dark"
 
--- vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("tokyonight-night")
 
 -- Source - https://stackoverflow.com/a
 -- Posted by C. Khalifa

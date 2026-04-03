@@ -1,7 +1,6 @@
 vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    "https://github.com/SmiteshP/nvim-navic",
-    "https://github.com/LunarVim/breadcrumbs.nvim"
+    "https://github.com/nvim-treesitter/nvim-treesitter-context"
 })
 
 local nts = require("nvim-treesitter")
@@ -19,21 +18,13 @@ require("nvim-treesitter").setup({
     indent = { enable = true },
 })
 
--- added breadcrumbs
-require("nvim-navic").setup {
-    lsp = {
-        auto_attach = true,
-    },
-}
-
-require("breadcrumbs").setup()
--- vim.api.nvim_create_autocmd("FileType", { -- enable treesitter highlighting and indents
---     callback = function(args)
---         local filetype = args.match
---         local lang = vim.treesitter.language.get_lang(filetype)
---         if vim.treesitter.language.add(lang) then
---             vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
---             vim.treesitter.start()
---         end
---     end
--- })
+vim.api.nvim_create_autocmd("FileType", { -- enable treesitter highlighting and indents
+    callback = function(args)
+        local filetype = args.match
+        local lang = vim.treesitter.language.get_lang(filetype)
+        if vim.treesitter.language.add(lang) then
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            vim.treesitter.start()
+        end
+    end
+})

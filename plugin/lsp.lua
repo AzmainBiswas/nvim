@@ -5,6 +5,7 @@ vim.pack.add({
     "https://github.com/rafamadriz/friendly-snippets",
     "https://github.com/l3mon4d3/LuaSnip",
     "https://github.com/j-hui/fidget.nvim",
+    { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*') }
 })
 
 require("fidget").setup()
@@ -52,3 +53,9 @@ local config = {
 vim.lsp.config('lua_ls', config)
 
 vim.lsp.enable('roslyn_ls')
+
+require('blink.cmp').setup({
+    fuzzy = {
+    implementation = "prefer_rust_with_warning"
+  }
+})
