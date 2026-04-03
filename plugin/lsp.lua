@@ -16,8 +16,8 @@ require("mason-lspconfig").setup({
 vim.diagnostic.config({
     update_in_insert = false,
     underline = true,
-    virtual_lines = true,
-    virtual_text = false,
+    virtual_lines = false,
+    virtual_text = true,
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
