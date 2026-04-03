@@ -12,6 +12,34 @@ function PackGet()
     vim.api.nvim_set_current_buf(buf)
 end
 
+function PackClean()
+    local actives = {}
+    local unused = {}
+
+    for _, plugin in ipairs(vim.pack.get()) do
+        actives[plugin.spec.name] = plugin.active
+    end
+
+    for _, plugin in ipairs(vim.pack.get()) do
+        if not actives[plugin.spec.name] then
+            table.insert(unused, plugin.spec.name)
+        end
+    end
+
+    if #unused == 0 then
+        print("No unused plugins.")
+        return
+    end
+
+    for _, p in ipairs(unused) do
+        print(p)
+    end
+    local choice = vim.fn.confirm("Want to Remove?", "&Y\n&N", 2)
+    if choice == 1 then
+        vim.pack.del(unused)
+    end
+end
+
 function PackDel()
     local buf = vim.api.nvim_create_buf(false, true)
     vim.bo[buf].buftype = "nofile"
@@ -53,3 +81,4 @@ end
 
 vim.api.nvim_create_user_command("PackGet", PackGet, {})
 vim.api.nvim_create_user_command("PackDel", PackDel, {})
+vim.api.nvim_create_user_command("PackClean", PackClean, {})
