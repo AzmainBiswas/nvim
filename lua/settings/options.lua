@@ -33,6 +33,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.complete = 'o,.,w,b,u'
 vim.opt.completeopt = 'menu,menuone,fuzzy,noinsert'
+-- Shorten the messaging delay in the command line so completion feels snappier
+vim.opt.shortmess:append("c")
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 
 -- Makes neovim and host OS clipboard play nicely with each other
@@ -44,6 +46,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.title = true
 vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
+
+vim.opt.path:append("**")
+vim.opt.wildmode = "longest:full,full" -- Shows a menu and completes the longest common match
+vim.opt.wildmenu = true                -- Enables the visual completion menu
 
 -- netrw
 -- disable netrw at the very start of your init.lua

@@ -16,22 +16,31 @@ require("mason-lspconfig").setup({
 
 vim.diagnostic.config({
     update_in_insert = false,
-    underline = true,
+    -- underline = true,
     virtual_lines = false,
     virtual_text = false,
+    severity_sort = true,
+    underline = {
+        severity = { min = vim.diagnostic.severity.WARN },
+    },
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(ev)
-        local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-        if client:supports_method('textDocument/completion') then
-            vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-            vim.opt.complete = 'o,.,w,b,u'
-            vim.opt.completeopt = 'menu,menuone,popup,noinsert,fuzzy'
-            vim.lsp.completion.enable(true, client.id, ev.buf)
-        end
-    end
-})
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--     callback = function(ev)
+--         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+--         if client:supports_method('textDocument/completion') then
+--             vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+--             vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy'}
+--             vim.opt.complete = 'o,.,w,b,u'
+--             vim.lsp.completion.enable(true, client.id, ev.buf, {
+--                 autotrigger = true,
+--             })
+--         end
+--     end
+-- })
+
+-- Define the border style
+local border = "rounded"
 
 ---@type vim.lsp.Config
 local config = {
@@ -55,7 +64,29 @@ vim.lsp.config('lua_ls', config)
 vim.lsp.enable('roslyn_ls')
 
 require('blink.cmp').setup({
+    appearance = {
+        use_nvim_cmp_as_default = true,
+    },
+    completion = {
+        menu = {
+            border = 'rounded',
+            draw = { treesitter = { 'lsp' } } 
+        },
+        documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 100,
+            window = { border = 'rounded' },
+        },
+        ghost_text = {
+            enabled = true,
+        }
+    },
+    signature = { enabled = true, window = { border = 'rounded' } },
     fuzzy = {
-    implementation = "prefer_rust_with_warning"
-  }
+        implementation = "prefer_rust_with_warning"
+    },
+    cmdline = {
+        keymap = { preset = 'inherit' },
+        completion = { menu = { auto_show = true } },
+    },
 })

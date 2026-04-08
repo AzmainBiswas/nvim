@@ -31,8 +31,7 @@ set("n", "<M-.>", "<c-w>5>")
 set("n", "<M-t>", "<C-W>+")
 set("n", "<M-s>", "<C-W>-")
 
--- compile commands #using oil
--- set("n", "<leader>e", function()
+-- set("n", "-", function()
 --     vim.cmd("Ex")
 -- end, { desc = "open file exploer" })
 

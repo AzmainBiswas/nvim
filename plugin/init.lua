@@ -3,11 +3,11 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.nvim", version = vim.version.range('*') },
     "https://github.com/folke/which-key.nvim",
     "https://github.com/lewis6991/gitsigns.nvim",
-    -- "https://github.com/junegunn/fzf.vim"
 })
 
 require("mini.statusline").setup()
-require("mini.pairs").setup()
+-- require("mini.pairs").setup()
+require("mini.icons").setup()
 
 require("which-key").add({
     { "<leader>s", group = "setting" },

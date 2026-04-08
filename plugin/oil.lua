@@ -4,6 +4,7 @@ vim.pack.add({
 
 require("oil").setup({
     columns = {
+        -- "icon",
         -- "permissions",
         -- "size",
         -- "mtime",
