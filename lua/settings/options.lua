@@ -18,6 +18,8 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.smarttab = true
 vim.opt.wrap = false -- one liner
+vim.opt.showmatch = true
+vim.opt.matchtime = 2
 
 -- Undo and backup options
 vim.opt.backup = false
@@ -31,14 +33,15 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.complete = 'o,.,w,b,u'
+-- vim.opt.complete = 'o,.,w,b,u'
 vim.opt.completeopt = 'menu,menuone,fuzzy,noinsert'
 -- Shorten the messaging delay in the command line so completion feels snappier
 vim.opt.shortmess:append("c")
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 
 -- Makes neovim and host OS clipboard play nicely with each other
-vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "a"
+vim.opt.clipboard:append("unnamedplus")
 
 -- vim.opt.termguicolors = true
 vim.opt.winborder = "rounded"
@@ -61,6 +64,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -- vim.opt.guicursor = "a:block" -- "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr:hor20-Cursor,o:hor50"
+vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:hor20,r-cr:hor20-Cursor,o:hor50"
 
 if vim.uv.os_uname().sysname == "Windows_NT" then
     if vim.fn.executable("pwsh.exe") == 1 then
