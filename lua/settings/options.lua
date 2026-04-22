@@ -64,7 +64,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -- vim.opt.guicursor = "a:block" -- "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr:hor20-Cursor,o:hor50"
-vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:hor20,r-cr:hor20-Cursor,o:hor50"
+-- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:hor20,r-cr:hor20-Cursor,o:hor50"
 
 if vim.uv.os_uname().sysname == "Windows_NT" then
     if vim.fn.executable("pwsh.exe") == 1 then
