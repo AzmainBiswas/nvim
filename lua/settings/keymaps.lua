@@ -8,7 +8,7 @@ vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode
 
 set("n", "<leader>x", "<CMD>.lua<CR>", { desc = "run current lua file" })
 set("n", "<leader><leader>", function()
-    vim.cmd("so")
+  vim.cmd("so")
 end, { desc = "sorce current file." })
 
 set("v", "J", ":m '>+1<CR>gv=gv")
@@ -51,9 +51,9 @@ set("n", "<leader>ss", "<CMD>:setlocal spell! spelllang=en_us<CR>", { desc = "se
 set('n', '<leader>oc', function() vim.cmd("e ~/AppData/Local/nvim/") end, { desc = 'open vim config file' })
 
 set("n", "<leader>cp", function()
-    local path = vim.fn.expand("%:p")
-    vim.fn.setreg("+", path)
-    print("file: " .. path)
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  print("file: " .. path)
 end, { desc = "Copy full file path" })
 
 --  See `:help wincmd` for a list of all window commands
@@ -85,7 +85,7 @@ set("n", "<C-Down>", "<C-w><C-j>")
 set("n", "grd", function() vim.diagnostic.setqflist() end, { desc = "Quick Fix diagnostic" })
 set("n", "grf", function() vim.lsp.buf.format() end, { desc = "format buffer" })
 set("n", "grl", function()
-    if vim.lsp.inlay_hint then
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    end
+  if vim.lsp.inlay_hint then
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end
 end, { desc = "inlay_hint enable" })

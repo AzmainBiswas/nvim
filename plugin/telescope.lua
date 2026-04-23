@@ -1,22 +1,22 @@
 vim.pack.add({
-    { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("*") },
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+  { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("*") },
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/nvim-telescope/telescope-ui-select.nvim"
 })
 
 
 --configuration options
 require("telescope").setup({
-    extensions = {
-        ["ui-select"] = {
-            require("telescope.themes").get_dropdown(),
-        },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown(),
     },
-    defaults = {
-        preview = {
-            treesitter = false,
-        },
+  },
+  defaults = {
+    preview = {
+      treesitter = false,
     },
+  },
 })
 
 require("telescope").load_extension("ui-select")
@@ -27,8 +27,8 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "switch buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "help" })
 vim.keymap.set("n", "<leader>fc", builtin.colorscheme, { desc = "change colorscheme" })
 vim.keymap.set(
-    "n",
-    "<leader>fs",
-    "<cmd>Telescope current_buffer_fuzzy_find<CR>",
-    { desc = "Fuzzy find in the opened buffer" }
+  "n",
+  "<leader>fs",
+  "<cmd>Telescope current_buffer_fuzzy_find<CR>",
+  { desc = "Fuzzy find in the opened buffer" }
 )
