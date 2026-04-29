@@ -10,9 +10,9 @@ vim.opt.cursorline = true
 vim.opt.signcolumn = "yes:1" --left column
 vim.opt.colorcolumn = "100"
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
@@ -50,6 +50,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.title = true
 vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
 
+vim.opt.list = true
+
 vim.opt.path:append("**")
 vim.opt.wildmode = "longest:full,full" -- Shows a menu and completes the longest common match
 vim.opt.wildmenu = true                -- Enables the visual completion menu
@@ -70,21 +72,21 @@ vim.opt.fileformats = { "unix", "dos" }
 vim.opt.fileformat = "unix"
 
 if vim.uv.os_uname().sysname == "Windows_NT" then
-  if vim.fn.executable("pwsh.exe") == 1 then
-    vim.opt.shell = "pwsh.exe"
-  else
-    vim.opt.shell = "powershell.exe"
-  end
-  local powershell_options = {
-    "-NoLogo",
-    "-NoProfile",
-    "-ExecutionPolicy RemoteSigned",
-    "-Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();",
-    "$PSDefaultParameterValues['Out-File:Encoding']='utf8';",
-  }
+    if vim.fn.executable("pwsh.exe") == 1 then
+        vim.opt.shell = "pwsh.exe"
+    else
+        vim.opt.shell = "powershell.exe"
+    end
+    local powershell_options = {
+        "-NoLogo",
+        "-NoProfile",
+        "-ExecutionPolicy RemoteSigned",
+        "-Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();",
+        "$PSDefaultParameterValues['Out-File:Encoding']='utf8';",
+    }
 
-  vim.opt.shellcmdflag = table.concat(powershell_options, " ")
-  vim.opt.shellpipe = "> %s 2>&1"
-  vim.opt.shellquote = ""
-  vim.opt.shellxquote = ""
+    vim.opt.shellcmdflag = table.concat(powershell_options, " ")
+    vim.opt.shellpipe = "> %s 2>&1"
+    vim.opt.shellquote = ""
+    vim.opt.shellxquote = ""
 end

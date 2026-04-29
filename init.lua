@@ -15,6 +15,6 @@ vim.cmd.packadd("cfilter")
 
 -- insert current time.
 vim.api.nvim_create_user_command("Now", function()
-  local date = tostring(os.date("%Y-%m-%d %I:%M:%S %p"));
-  vim.api.nvim_put({ date }, "c", true, true);
+    local date = tostring(os.date("%Y-%m-%d %I:%M:%S %p"));
+    vim.api.nvim_put({ date }, "c", true, true);
 end, {})
