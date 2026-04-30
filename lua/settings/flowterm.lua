@@ -8,8 +8,8 @@ local term_state = {
 
 local function create_floating_window(opts)
     opts = opts or {}
-    local width = opts.width or math.floor(vim.o.columns * 0.6)
-    local height = opts.height or math.floor(vim.o.lines * 0.6)
+    local width = opts.width or math.floor(vim.o.columns * 0.85)
+    local height = opts.height or math.floor(vim.o.lines * 0.85)
 
 
     -- Center the window
@@ -32,7 +32,8 @@ local function create_floating_window(opts)
         col = col,
         row = row,
         style = 'minimal',
-        border = 'rounded',
+        -- border = 'rounded',
+        border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" } 
     })
 
     return { buf = buf, win = win }
