@@ -4,6 +4,7 @@ local term_state = {
     bottom = {
         buf = -1,
         win = -1,
+        height = -1
     }
 }
 
@@ -44,11 +45,20 @@ end
 
 vim.api.nvim_create_user_command("Bterm", function(opts)
     if not vim.api.nvim_win_is_valid(term_state.bottom.win) then
-        term_state.bottom = create_bottom_window({ buf = term_state.bottom.buf, height = tonumber(opts.args)})
+        local h = nil
+
+        if term_state.bottom.height == -1 then
+            h = tonumber(opts.args)
+        else
+            h = term_state.bottom.height
+        end
+
+        term_state.bottom = create_bottom_window({ buf = term_state.bottom.buf, height = h})
         if vim.bo[term_state.bottom.buf].buftype ~= "terminal" then
             vim.cmd.terminal()
         end
     else
+        term_state.bottom.height = vim.api.nvim_win_get_height(term_state.bottom.win);
         vim.api.nvim_win_hide(term_state.bottom.win)
     end
 end, {
