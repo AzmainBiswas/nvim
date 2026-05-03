@@ -8,6 +8,7 @@ require("settings.autocmds")
 require("settings.flowterm")
 require("settings.terminal")
 require("settings.vimpack")
+require("settings.build")
 
 vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")
