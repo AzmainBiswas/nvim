@@ -33,7 +33,7 @@ local function create_floating_window(opts)
         row = row,
         style = 'minimal',
         -- border = 'rounded',
-        border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" } 
+        border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
     })
 
     return { buf = buf, win = win }
@@ -44,6 +44,8 @@ vim.api.nvim_create_user_command("FloTerm", function()
         term_state.floating = create_floating_window({ buf = term_state.floating.buf })
         if vim.bo[term_state.floating.buf].buftype ~= "terminal" then
             vim.cmd.terminal()
+        else
+            vim.cmd("startinsert")
         end
     else
         vim.api.nvim_win_hide(term_state.floating.win)

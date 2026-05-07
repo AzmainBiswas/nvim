@@ -44,8 +44,8 @@ vim.opt.mouse = "a"
 vim.opt.clipboard:append("unnamedplus")
 
 -- vim.opt.termguicolors = true
--- vim.opt.winborder = "rounded"
-vim.opt.winborder = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+-- vim.opt.winborder = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+vim.opt.winborder = "none"
 vim.opt.isfname:append("@-@")
 
 vim.opt.title = true

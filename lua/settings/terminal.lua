@@ -53,9 +53,11 @@ vim.api.nvim_create_user_command("Bterm", function(opts)
             h = term_state.bottom.height
         end
 
-        term_state.bottom = create_bottom_window({ buf = term_state.bottom.buf, height = h})
+        term_state.bottom = create_bottom_window({ buf = term_state.bottom.buf, height = h })
         if vim.bo[term_state.bottom.buf].buftype ~= "terminal" then
             vim.cmd.terminal()
+        else
+            vim.cmd("startinsert") -- Cleaner way to enter insert mode
         end
     else
         term_state.bottom.height = vim.api.nvim_win_get_height(term_state.bottom.win);
@@ -66,6 +68,6 @@ end, {
     nargs = "?"
 })
 
-vim.keymap.set('n', '<C-t>', function()
+vim.keymap.set({ 'n', 't' }, '<C-t>', function()
     vim.cmd("Bterm")
 end, { desc = 'terminal' })

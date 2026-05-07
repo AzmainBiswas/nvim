@@ -9,7 +9,7 @@ vim.pack.add({
 })
 
 require("fidget").setup()
-vim.notify = require("fidget").notify
+-- vim.notify = require("fidget").notify
 require("mason").setup()
 require("mason-lspconfig").setup({
     automatic_enable = true
@@ -19,12 +19,14 @@ vim.diagnostic.config({
     update_in_insert = false,
     -- underline = true,
     virtual_lines = false,
-    virtual_text = false,
+    virtual_text = true,
     severity_sort = true,
     underline = {
         severity = { min = vim.diagnostic.severity.WARN },
     },
 })
+
+require('luasnip.loaders.from_vscode').lazy_load()
 
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --   callback = function(ev)
@@ -40,9 +42,6 @@ vim.diagnostic.config({
 --     end
 --   end
 -- })
-
--- Define the border style
-local border = "rounded"
 
 ---@type vim.lsp.Config
 local config = {
@@ -65,6 +64,8 @@ vim.lsp.config('lua_ls', config)
 
 vim.lsp.enable('roslyn_ls')
 
+local border = "none"
+
 require('blink.cmp').setup({
     keymap = { preset = 'default' },
     sources = {
@@ -75,13 +76,15 @@ require('blink.cmp').setup({
     },
     completion = {
         menu = {
-            border = 'rounded',
+            border = border,
             draw = { treesitter = { 'lsp' } }
         },
         documentation = {
             auto_show = true,
             auto_show_delay_ms = 100,
-            window = { border = 'rounded' },
+            window = {
+                border = border,
+            },
         },
         ghost_text = {
             enabled = false,
