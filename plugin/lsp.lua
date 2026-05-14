@@ -19,8 +19,11 @@ vim.diagnostic.config({
     update_in_insert = false,
     -- underline = true,
     virtual_lines = false,
-    virtual_text = true,
+    -- virtual_text = true,
     severity_sort = true,
+    virtual_text = {
+        severity = { min = vim.diagnostic.severity.WARN },
+    },
     underline = {
         severity = { min = vim.diagnostic.severity.WARN },
     },

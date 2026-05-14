@@ -3,13 +3,8 @@ vim.pack.add({
 })
 
 require("snacks").setup({
-    animate = { enabled = true },
-    bigfile = {
-        enabled = true
-    },
-    git = { enabled = true },
-    gitbrowse = { enabled = true },
-    indent = { enabled = true },
-    scroll = { enabled = true },
-    words = { enabled = false },
+    -- bigfile = {
+    --     enabled = true,
+    --     size = 1.5 * 1024 * 1024, -- 1.5MB
+    -- },
 })
