@@ -59,6 +59,7 @@ local picker = Snacks.picker;
 -- })
 
 vim.keymap.set("n", "<leader>ff", picker.files, { desc = "Find Files" })
+vim.keymap.set("n", "<C-p>", picker.files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fg", picker.grep, { desc = "Grep word from opened file system" })
 vim.keymap.set("n", "<leader>fb", picker.buffers, { desc = "switch buffers" })
 vim.keymap.set("n", "<leader>fh", picker.help, { desc = "help" })
