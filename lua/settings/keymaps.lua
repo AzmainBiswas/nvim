@@ -70,9 +70,6 @@ set("n", "<C-Up>", "<C-w><C-k>")
 set("n", "<C-Down>", "<C-w><C-j>")
 
 -- some kymaps
--- set("i", "[", "[]<left>")
--- set("i", "(", "()<left>")
--- set("i", "{", "{}<left>")
 -- vim.cmd [[
 -- inoremap " ""<left>
 -- inoremap ' ''<left>
@@ -83,6 +80,9 @@ set("n", "<C-Down>", "<C-w><C-j>")
 -- inoremap {;<CR> {<CR>};<ESC>O
 -- ]]
 
+set('i', '<c-space>', function()
+    vim.lsp.completion.get()
+end)
 set("n", "grd", function() vim.diagnostic.setqflist() end, { desc = "Quick Fix diagnostic" })
 set("n", "<M-S-f>", function() vim.lsp.buf.format() end, { desc = "format buffer" })
 set("n", "grl", function()

@@ -1,6 +1,6 @@
 vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-  "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  -- "https://github.com/nvim-treesitter/nvim-treesitter-context"
 })
 
 local nts = require("nvim-treesitter")

@@ -8,7 +8,7 @@ vim.opt.textwidth = 100
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes:1" --left column
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "0"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -43,14 +43,15 @@ vim.opt.grepprg = "rg --vimgrep --smart-case"
 vim.opt.mouse = "a"
 vim.opt.clipboard:append("unnamedplus")
 
--- vim.opt.termguicolors = true
--- vim.opt.winborder = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
-vim.opt.winborder = "none"
+vim.opt.termguicolors = true
+local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+vim.opt.winborder = border
+vim.opt.pumborder = border
+-- vim.opt.winborder = "none"
 vim.opt.isfname:append("@-@")
 
 vim.opt.title = true
 vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
-
 vim.opt.list = true
 
 vim.opt.path:append("**")
