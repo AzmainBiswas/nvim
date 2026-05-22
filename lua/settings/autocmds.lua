@@ -26,6 +26,33 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+-- vim.api.nvim_create_autocmd("Syntax", {
+--     group = augroup,
+--     callback = function()
+--         vim.fn.matchadd("Todo", [[\v\c<(NOTE|OPTIMIZE|LINK|TODO|FIX):]])
+--     end
+-- })
+
+vim.api.nvim_create_autocmd("Syntax", {
+    group = augroup,
+    pattern = "*",
+    callback = function()
+        -- Clear any old matches in the window so they don't stack up when re-sourcing
+        pcall(vim.fn.clearmatches)
+
+        local todo_matches = {
+            DiagnosticError = [[\v\c<(fix|bug|error|critical):]],
+            DiagnosticInfo  = [[\v\c<(todo|implement|task):]],
+            DiagnosticHint  = [[\v\c<(optimize|perf|warn|warning):]],
+            Identifier      = [[\v\c<(note|link|info|review):]],
+        }
+
+        for hl_group, pattern in pairs(todo_matches) do
+            vim.fn.matchadd(hl_group, pattern)
+        end
+    end
+})
+
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --     group = augroup,
 --     callback = function(e)

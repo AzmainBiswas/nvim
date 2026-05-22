@@ -29,7 +29,7 @@ local function get_active_lsps()
     end
 
     -- Returns something like "[lua_ls, vtsls]"
-    return "[" .. table.concat(client_names, ", ") .. "]"
+    return "" .. table.concat(client_names, ", ") .. ""
 end
 
 local statusline = require("mini.statusline")
