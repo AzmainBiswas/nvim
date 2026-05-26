@@ -68,6 +68,15 @@ end, {
     nargs = "?"
 })
 
+vim.api.nvim_create_user_command("Nterm", function(opts)
+    vim.cmd.tabnew();
+    vim.cmd.terminal();
+end, {})
+
 vim.keymap.set({ 'n', 't' }, '<C-t>', function()
     vim.cmd("Bterm")
+end, { desc = 'terminal' })
+
+vim.keymap.set({ 'n' }, '<leader>tt', function()
+    vim.cmd("Nterm")
 end, { desc = 'terminal' })
