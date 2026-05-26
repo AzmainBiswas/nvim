@@ -2,8 +2,8 @@ vim.pack.add({
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/williamboman/mason.nvim",
     "https://github.com/williamboman/mason-lspconfig.nvim",
+    { src = "https://github.com/l3mon4d3/LuaSnip", version = vim.version.range("2.*") },
     "https://github.com/rafamadriz/friendly-snippets",
-    "https://github.com/l3mon4d3/LuaSnip",
     "https://github.com/j-hui/fidget.nvim",
     -- { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*') }
 })
@@ -29,30 +29,34 @@ vim.diagnostic.config({
     },
 })
 
+local luasnip = require('luasnip')
+luasnip.config.setup({
+    enable_autosnippets = true,
+})
 require('luasnip.loaders.from_vscode').lazy_load()
 
 vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-    if client:supports_method('textDocument/completion') then
-      vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-      vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy' }
-      vim.opt.complete = 'o,.,w,b,u'
-      -- vim.opt.complete = 'o'
-      vim.lsp.completion.enable(true, client.id, ev.buf, {
-        autotrigger = true,
-      })
+    callback = function(ev)
+        local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+        if client:supports_method('textDocument/completion') then
+            vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+            vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy' }
+            vim.opt.complete = 'o,.,w,b,u'
+            -- vim.opt.complete = 'o'
+            vim.lsp.completion.enable(true, client.id, ev.buf, {
+                autotrigger = true,
+            })
+        end
     end
-  end
 })
 
 -- Remap Tab to accept completion if the menu is open, otherwise act as normal Tab
 vim.keymap.set('i', '<Tab>', function()
-  if vim.fn.pumvisible() == 1 then
-    return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
-  else
-    return vim.api.nvim_replace_termcodes('<Tab>', true, true, true)
-  end
+    if vim.fn.pumvisible() == 1 then
+        return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
+    else
+        return vim.api.nvim_replace_termcodes('<Tab>', true, true, true)
+    end
 end, { expr = true, noremap = true })
 
 ---@type vim.lsp.Config

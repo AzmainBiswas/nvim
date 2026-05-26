@@ -52,7 +52,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.title = true
 vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
-vim.opt.list = true
 
 vim.opt.path:append("**")
 vim.opt.wildmode = "longest:full,full" -- Shows a menu and completes the longest common match

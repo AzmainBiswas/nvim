@@ -1,15 +1,16 @@
 vim.pack.add({
   -- { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
-  "https://github.com/folke/tokyonight.nvim",
-  -- "https://github.com/rose-pine/neovim"
+  -- "https://github.com/folke/tokyonight.nvim",
+   { src = "https://github.com/rose-pine/neovim", name = "rose-pine" },
   -- "https://github.com/ellisonleao/gruvbox.nvim"
 })
 
 vim.opt.background = "dark"
 
 -- vim.cmd.colorscheme("habamax")
--- vim.cmd.colorscheme("rose-pine")
-vim.cmd.colorscheme("tokyonight-night")
+-- vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("rose-pine")
+-- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("slate")
 -- vim.cmd.colorscheme("retrobox")
 -- vim.cmd.colorscheme("gruvbox")

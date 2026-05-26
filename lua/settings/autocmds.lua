@@ -37,6 +37,7 @@ vim.api.nvim_create_autocmd("Syntax", {
     group = augroup,
     pattern = "*",
     callback = function()
+        vim.cmd("syntax clear Todo")
         -- Clear any old matches in the window so they don't stack up when re-sourcing
         pcall(vim.fn.clearmatches)
 
