@@ -4,7 +4,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.statusline", version = 'stable' },
     "https://github.com/folke/which-key.nvim",
     "https://github.com/lewis6991/gitsigns.nvim",
-    "https://github.com/danymat/neogen"
+    "https://github.com/danymat/neogen",
 })
 
 require("mini.icons").setup()
@@ -59,8 +59,8 @@ statusline.setup({
 
             -- 3. Combine them all using mini's layout builder
             return statusline.combine_groups({
-                { hl = mode_hl,                 strings = { mode } },
-                { hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics } },
+                { hl = mode_hl,                  strings = { mode } },
+                { hl = "MiniStatuslineDevinfo",  strings = { git, diff, diagnostics } },
                 -- Use %= to push everything after this to the center/right of the statusline
                 -- "%=",
                 -- Place the filename block in the middle
