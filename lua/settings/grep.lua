@@ -14,7 +14,7 @@ end
 
 local function grep_yanked_text()
     local copied = vim.fn.getreg('"')
-    copied = copied:gsub("^%s+", ""):gsub("%s+$", "")
+    copied = vim.trim(copied)
     grep_word(copied)
 end
 
@@ -28,7 +28,7 @@ local function grep_visual_selection()
 
   local lines = vim.api.nvim_buf_get_text(0, srow - 1, scol - 1, erow - 1, ecol, {})
   local selection = table.concat(lines, " ")
-  selection = selection:gsub("^%s+", ""):gsub("%s+$", "")
+  selection = vim.trim(selection)
   grep_word(selection)
 end
 
