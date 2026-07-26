@@ -15,12 +15,12 @@ vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")
 vim.cmd.packadd("cfilter")
 
-require('vim._core.ui2').enable({
-    msg = {
-        target = 'cmd',
-        cmd = { height = 1 }
-    }
-})
+-- require('vim._core.ui2').enable({
+--     msg = {
+--         target = 'cmd',
+--         cmd = { height = 1 }
+--     }
+-- })
 
 -- insert current time.
 vim.api.nvim_create_user_command("Now", function()
