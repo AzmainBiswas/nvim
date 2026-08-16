@@ -5,7 +5,7 @@ vim.pack.add({
     { src = "https://github.com/l3mon4d3/LuaSnip", version = vim.version.range("2.*") },
     "https://github.com/rafamadriz/friendly-snippets",
     "https://github.com/j-hui/fidget.nvim",
-    -- { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*') }
+    { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*') }
 })
 
 require("fidget").setup()
@@ -35,29 +35,30 @@ luasnip.config.setup({
 })
 require('luasnip.loaders.from_vscode').lazy_load()
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(ev)
-        local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-        if client:supports_method('textDocument/completion') then
-            vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-            vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy' }
-            vim.opt.complete = 'o,.,w,b,u'
-            -- vim.opt.complete = 'o'
-            vim.lsp.completion.enable(true, client.id, ev.buf, {
-                autotrigger = true,
-            })
-        end
-    end
-})
+-- native complition
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--     callback = function(ev)
+--         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+--         if client:supports_method('textDocument/completion') then
+--             vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+--             vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy' }
+--             vim.opt.complete = 'o,.,w,b,u'
+--             -- vim.opt.complete = 'o'
+--             vim.lsp.completion.enable(true, client.id, ev.buf, {
+--                 autotrigger = true,
+--             })
+--         end
+--     end
+-- })
 
 -- Remap Tab to accept completion if the menu is open, otherwise act as normal Tab
-vim.keymap.set('i', '<Tab>', function()
-    if vim.fn.pumvisible() == 1 then
-        return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
-    else
-        return vim.api.nvim_replace_termcodes('<Tab>', true, true, true)
-    end
-end, { expr = true, noremap = true })
+-- vim.keymap.set('i', '<Tab>', function()
+--     if vim.fn.pumvisible() == 1 then
+--         return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
+--     else
+--         return vim.api.nvim_replace_termcodes('<Tab>', true, true, true)
+--     end
+-- end, { expr = true, noremap = true })
 
 ---@type vim.lsp.Config
 local config = {
@@ -82,36 +83,40 @@ vim.lsp.enable('roslyn_ls')
 
 local border = "none"
 
--- require('blink.cmp').setup({
---     keymap = { preset = 'default' },
---     sources = {
---         default = { 'lsp', 'path', 'snippets', 'buffer' },
---     },
---     appearance = {
---         use_nvim_cmp_as_default = true,
---     },
---     completion = {
---         menu = {
---             border = border,
---             draw = { treesitter = { 'lsp' } }
---         },
---         documentation = {
---             auto_show = true,
---             auto_show_delay_ms = 100,
---             window = {
---                 border = border,
---             },
---         },
---         ghost_text = {
---             enabled = false,
---         }
---     },
---     signature = { enabled = true, window = { border = 'rounded' } },
---     fuzzy = {
---         implementation = "prefer_rust_with_warning"
---     },
---     cmdline = {
---         keymap = { preset = 'inherit' },
---         completion = { menu = { auto_show = false } },
---     },
--- })
+require('blink.cmp').setup({
+    keymap = { preset = 'default' },
+    sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+    appearance = {
+        use_nvim_cmp_as_default = true,
+    },
+    completion = {
+        menu = {
+            border = border,
+            draw = { treesitter = { 'lsp' } }
+        },
+        documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 100,
+            window = {
+                border = border,
+            },
+        },
+        ghost_text = {
+            enabled = false,
+        }
+    },
+    signature = { enabled = true, window = { border = 'rounded' } },
+    fuzzy = {
+        implementation = "prefer_rust_with_warning"
+    },
+    cmdline = {
+        keymap = {
+            preset = 'inherit',
+            ['<Up>'] = { 'select_prev', 'fallback' },
+            ['<Down>'] = { 'select_next', 'fallback' },
+        },
+        completion = { menu = { auto_show = true } },
+    },
+})
