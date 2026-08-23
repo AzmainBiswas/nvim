@@ -5,6 +5,7 @@ vim.pack.add({
     "https://github.com/folke/which-key.nvim",
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/danymat/neogen",
+    "https://github.com/brenoprata10/nvim-highlight-colors",
 })
 
 require("mini.icons").setup()
@@ -74,3 +75,5 @@ statusline.setup({
         end,
     },
 })
+
+require('nvim-highlight-colors').setup({})
