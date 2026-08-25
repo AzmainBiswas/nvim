@@ -42,3 +42,4 @@ end
 
 vim.api.nvim_create_user_command("PackGet", PackGet, {})
 vim.api.nvim_create_user_command("PackClean", PackClean, {})
+vim.api.nvim_create_user_command("PackUpdate", function() vim.pack.update() end, {})

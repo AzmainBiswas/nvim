@@ -2,14 +2,15 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.laststatus = 3
 
-require("settings.options")
-require("settings.keymaps")
-require("settings.autocmds")
-require("settings.flowterm")
-require("settings.terminal")
-require("settings.vimpack")
-require("settings.build")
-require("settings.grep")
+require("configs.options")
+require("configs.keymaps")
+require("configs.autocmds")
+require("configs.flowterm")
+require("configs.terminal")
+require("configs.vimpack")
+require("configs.build")
+require("configs.grep")
+require("plugins")
 
 vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")
