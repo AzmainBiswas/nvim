@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.laststatus = 3
 
+require("lazy.lazy")
+-- require("vim-pack")
+
 require("configs.options")
 require("configs.keymaps")
 require("configs.autocmds")
@@ -10,7 +13,7 @@ require("configs.terminal")
 require("configs.vimpack")
 require("configs.build")
 require("configs.grep")
-require("plugins")
+require("configs.lsp")
 
 vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")

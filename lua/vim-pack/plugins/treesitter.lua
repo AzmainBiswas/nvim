@@ -6,7 +6,7 @@ vim.pack.add({
 local nts = require("nvim-treesitter")
 vim.api.nvim_create_autocmd('PackChanged', { callback = function() nts.update() end })
 
-require("nvim-treesitter").setup({
+nts.setup({
   ensure_installed = { "vim", "vimdoc", "query" },
   auto_install = true,
   sync_install = false,
