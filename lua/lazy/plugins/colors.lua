@@ -1,11 +1,11 @@
 return {
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     config = function ()
-    --         vim.cmd.colorscheme("catppuccin")
-    --     end
-    -- },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = function ()
+            vim.cmd.colorscheme("catppuccin")
+        end
+    },
     -- {
     --     "folke/tokyonight.nvim",
     --     config = function ()
@@ -25,10 +25,10 @@ return {
     --         vim.cmd.colorscheme("gruvbox")
     --     end
     -- },
-    {
-        "marko-cerovac/material.nvim",
-        config = function()
-            vim.cmd.colorscheme("material-darker")
-        end
-    },
+    -- {
+    --     "marko-cerovac/material.nvim",
+    --     config = function()
+    --         vim.cmd.colorscheme("material-darker")
+    --     end
+    -- },
 }
