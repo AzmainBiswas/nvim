@@ -1,7 +1,6 @@
 require("vim-pack.plugins.color")
 require("vim-pack.plugins.harpoon")
 require("vim-pack.plugins.lsp")
-require("vim-pack.plugins.markdown-rander")
 require("vim-pack.plugins.miss")
 require("vim-pack.plugins.neogit")
 require("vim-pack.plugins.oil")

@@ -1,6 +1,6 @@
 return {
     "NeogitOrg/neogit",
-    lazy = true,
+    lazy = false,
     keys = {
         { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
     },

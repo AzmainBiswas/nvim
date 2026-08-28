@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.laststatus = 3
 
-require("lazy.lazy")
--- require("vim-pack")
+-- require("lazy.lazy")
+require("vim-pack")
 
 require("configs.options")
 require("configs.keymaps")
