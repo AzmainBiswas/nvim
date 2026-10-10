@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.o.laststatus = 3
+vim.o.laststatus = 2
 
 -- require("lazy.lazy")
 require("vim-pack")
