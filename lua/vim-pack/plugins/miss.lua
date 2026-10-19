@@ -7,11 +7,11 @@ vim.pack.add({
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/danymat/neogen",
     "https://github.com/brenoprata10/nvim-highlight-colors",
-  'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
 -- require("mini.icons").setup()
-
+require('nvim-web-devicons').setup()
 require("which-key").add({
     { "<leader>s", group = "setting" },
     { "<leader>g", group = "lsp" },
