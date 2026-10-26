@@ -8,8 +8,8 @@ vim.pack.add({
 
 
 -- vim.cmd.colorscheme("habamax")
--- vim.cmd.colorscheme("catppuccin-mocha")
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("rose-pine")
 -- vim.cmd.colorscheme("solarized")
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("slate")
