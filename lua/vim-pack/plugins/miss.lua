@@ -7,7 +7,7 @@ vim.pack.add({
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/danymat/neogen",
     "https://github.com/brenoprata10/nvim-highlight-colors",
-    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+    -- 'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
 -- require("mini.icons").setup()
@@ -26,4 +26,4 @@ vim.api.nvim_set_keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR
 
 require('nvim-highlight-colors').setup({})
 
-require('render-markdown').setup({}) -- only mandatory if you want to set custom options
+-- require('render-markdown').setup({}) -- only mandatory if you want to set custom options
