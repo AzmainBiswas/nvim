@@ -14,6 +14,7 @@ require("configs.vimpack")
 require("configs.build")
 require("configs.grep")
 require("configs.lsp")
+require("configs.format_md_table")
 
 vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")
