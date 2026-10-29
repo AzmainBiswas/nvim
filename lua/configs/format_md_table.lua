@@ -81,22 +81,18 @@ local function format_markdown_table(start_line, end_line)
             if is_seperator then
                 local left = cell:sub(1, 1) == ":"
                 local right = cell:sub(-1) == ":"
-                local dashes = widths[col] - (left and 1 or 0) - (right and 1 or 0)
+                local dashes = widths[col] - (left and 1 or 0) - (right and 1 or 0) + 1 + 1
 
                 dashes = math.max(dashes, 1)
                 cell = (left and ":" or "") .. string.rep("-", dashes) .. (left and ":" or "")
             else
                 local padding = widths[col] - vim.fn.strdisplaywidth(cell)
-                cell = cell .. string.rep(" ", math.max(0, padding))
+                cell = " " .. cell .. string.rep(" ", math.max(0, padding)) .. " "
             end
             table.insert(cells, cell)
         end
 
-        if is_seperator then
-            table.insert(formatted, "|-" .. table.concat(cells, "-|-") .. "-|")
-        else
-            table.insert(formatted, "| " .. table.concat(cells, " | ") .. " |")
-        end
+        table.insert(formatted, "|" .. table.concat(cells, "|") .. "|")
     end
 
     vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, formatted)
@@ -108,6 +104,7 @@ vim.keymap.set("x", "<leader>mt", function()
     local last  = vim.fn.line(".")
 
     format_markdown_table(math.min(first, last), math.max(first, last))
+    vim.cmd("normal! \27")
 end, { desc = "Format selected Markdown table" })
 
 -- Command-line: :FormatMarkdownTable
