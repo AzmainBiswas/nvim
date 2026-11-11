@@ -10,7 +10,13 @@ nts.setup({
     install_dir = vim.fn.stdpath('data') .. '/site',
 })
 
-nts.install({ "vim", "vimdoc", "query", "c_sharp", "python" })
+nts.install({
+    "vim",
+    "vimdoc",
+    "query",
+    "c_sharp",
+    "python"
+})
 
 vim.api.nvim_create_autocmd('FileType', {
     callback = function(args)

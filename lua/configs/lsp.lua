@@ -15,7 +15,7 @@ vim.lsp.config('lua_ls', {
     },
 })
 
--- vim.lsp.enable('roslyn_ls')
+vim.lsp.enable('roslyn_ls')
 
 vim.diagnostic.config({
     update_in_insert = false,
@@ -29,6 +29,17 @@ vim.diagnostic.config({
     underline = {
         severity = { min = vim.diagnostic.severity.WARN },
     },
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and (client.name == "roslyn_ls" or client.name == "omnisharp") then
+            vim.lsp.semantic_tokens.enable(false, {
+                bufnr = args.buf,
+            })
+        end
+    end,
 })
 
 -- native complition
