@@ -15,7 +15,7 @@ vim.lsp.config('lua_ls', {
     },
 })
 
--- vim.lsp.enable('roslyn_ls')
+vim.lsp.enable('roslyn_ls')
 
 vim.diagnostic.config({
     update_in_insert = false,
