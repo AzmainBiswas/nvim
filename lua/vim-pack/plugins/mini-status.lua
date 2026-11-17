@@ -31,7 +31,7 @@ statusline.setup({
             local diagnostics   = statusline.section_diagnostics({ trunc_width = 75 })
             local lsp           = statusline.section_lsp({ trunc_width = 75 })
             -- local filename      = statusline.section_filename({ trunc_width = 140 })
-            local filename      = '%f %m%r'
+            local filename      = '%t %m%r'
             local fileinfo      = statusline.section_fileinfo({ trunc_width = 120 })
             local location      = statusline.section_location({ trunc_width = 75 })
 

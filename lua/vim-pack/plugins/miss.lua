@@ -25,5 +25,4 @@ local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
 
 require('nvim-highlight-colors').setup({})
-
 -- require('render-markdown').setup({}) -- only mandatory if you want to set custom options
