@@ -3,9 +3,9 @@ vim.opt.smoothscroll = true
 vim.opt.confirm = true
 
 vim.opt.number = true
+vim.opt.relativenumber = true
 -- vim.opt.numberwidth = 4
 vim.opt.textwidth = 100
-vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes:1" --left column
 vim.opt.colorcolumn = "85"

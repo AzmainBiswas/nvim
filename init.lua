@@ -25,12 +25,12 @@ if vim.g.neovide then
     require("configs.neovide")
 end
 
--- require('vim._core.ui2').enable({
---     msg = {
---         target = 'cmd',
---         cmd = { height = 1 }
---     }
--- })
+require('vim._core.ui2').enable({
+    msg = {
+        target = 'cmd',
+        cmd = { height = 1 }
+    }
+})
 
 -- insert current time.
 vim.api.nvim_create_user_command("Now", function()
