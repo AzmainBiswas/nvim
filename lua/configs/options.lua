@@ -37,6 +37,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- vim.opt.complete = 'o,.,w,b,u'
 vim.opt.completeopt = 'menu,menuone,fuzzy,noinsert'
+vim.opt.completeopt:append("popup")
 -- Shorten the messaging delay in the command line so completion feels snappier
 vim.opt.shortmess:append("c")
 vim.opt.grepprg = "rg --vimgrep --smart-case"
@@ -56,6 +57,51 @@ vim.opt.title = true
 vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
 
 vim.opt.path:append("**")
+
+local ignore = vim.opt.wildignore
+-- Version control and Node
+ignore:append("**/.git/*")
+ignore:append("**/node_modules/*")
+
+-- Build outputs (Web, Rust, Java, etc.)
+ignore:append("**/build/*")
+ignore:append("**/dist/*")
+ignore:append("**/target/*")
+ignore:append("**/.next/*")
+
+-- Python environments and caches
+ignore:append("**/.venv/*")
+ignore:append("**/.env/*")
+ignore:append("**/env/*")
+ignore:append("**/venv/*")
+ignore:append("**/__pycache__/*")
+ignore:append("*.pyc")
+
+-- Other dependencies
+ignore:append("**/vendor/*")
+
+-- Binaries and compiled files
+ignore:append("*.o,*.obj,*.class,*.dll,*.exe")
+
+-- C# / .NET Build Artifacts (These get huge and are regenerated constantly)
+ignore:append("**/bin/*")
+ignore:append("**/obj/*")
+
+-- Packages and Dependencies
+ignore:append("**/packages/*") -- Local NuGet packages (common in older .NET Framework solutions)
+ignore:append("*.nupkg")       -- Packaged NuGet files
+
+-- IDE Caches and Local State
+ignore:append("**/.vs/*")      -- Visual Studio local folder
+ignore:append("**/.idea/*")    -- Rider/JetBrains cache (if you use it alongside Neovim)
+
+-- Test Outputs
+ignore:append("**/TestResults/*")
+
+-- System and data files
+ignore:append(".DS_Store")
+ignore:append("*.log")
+
 vim.opt.wildmode = "longest:full,full" -- Shows a menu and completes the longest common match
 vim.opt.wildmenu = true                -- Enables the visual completion menu
 

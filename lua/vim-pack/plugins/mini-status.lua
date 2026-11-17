@@ -34,8 +34,7 @@ statusline.setup({
             local filename      = '%t %m%r'
             local fileinfo      = statusline.section_fileinfo({ trunc_width = 120 })
             local location      = statusline.section_location({ trunc_width = 75 })
-
-            local lsp_name      = get_active_lsps();
+            local lsp_name      = get_active_lsps()
             -- local progress = vim.ui.progress_status and vim.ui.progress_status() or ""
 
             -- 3. Combine them all using mini's layout builder
@@ -48,7 +47,7 @@ statusline.setup({
                 { hl = "MiniStatuslineFilename", strings = { filename } },
                 "%=",
                 -- Inject the LSP progress on the right side next to the connected LSP names
-                { hl = "MiniStatuslineDevinfo",  strings = { lsp_name } },
+                { hl = "MiniStatuslineDevinfo",  strings = { lsp, lsp_name } },
                 { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
                 { hl = mode_hl,                  strings = { location } },
             })
