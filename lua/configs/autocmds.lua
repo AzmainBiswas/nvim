@@ -42,10 +42,10 @@ vim.api.nvim_create_autocmd("Syntax", {
         pcall(vim.fn.clearmatches)
 
         local todo_matches = {
-            DiagnosticError = [[\v\c<(fix|bug|error|critical):]],
-            DiagnosticInfo  = [[\v\c<(todo|implement|task):]],
-            DiagnosticHint  = [[\v\c<(optimize|perf|warn|warning):]],
-            Identifier      = [[\v\c<(note|link|info|review):]],
+            DiagnosticError = [[\v\c<(fix|bug|error|critical)(\([^)]*\))?:]],
+            DiagnosticInfo  = [[\v\c<(todo|implement|task)(\([^)]*\))?:]],
+            DiagnosticHint  = [[\v\c<(optimize|perf|warn|warning)(\([^)]*\))?:]],
+            Identifier      = [[\v\c<(note|link|info|review)(\([^)]*\))?:]],
         }
 
         for hl_group, pattern in pairs(todo_matches) do
