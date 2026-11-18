@@ -8,7 +8,7 @@ vim.opt.relativenumber = true
 vim.opt.textwidth = 100
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes:1" --left column
-vim.opt.colorcolumn = "85"
+vim.opt.colorcolumn = "80"
 vim.opt.cmdheight = 1
 
 vim.opt.autoread = true
