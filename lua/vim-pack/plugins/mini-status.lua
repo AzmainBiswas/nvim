@@ -47,7 +47,7 @@ statusline.setup({
                 { hl = "MiniStatuslineFilename", strings = { filename } },
                 "%=",
                 -- Inject the LSP progress on the right side next to the connected LSP names
-                { hl = "MiniStatuslineDevinfo",  strings = { lsp, lsp_name } },
+                { hl = "MiniStatuslineDevinfo",  strings = { lsp_name } },
                 { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
                 { hl = mode_hl,                  strings = { location } },
             })
