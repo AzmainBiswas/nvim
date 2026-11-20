@@ -1,4 +1,4 @@
-vim.o.guifont = "FiraCode Nerd Font Mono:h12"
+vim.o.guifont = "FiraMono Nerd Font Mono:h12"
 vim.g.neovide_corner_preference = "round"
 vim.g.neovide_window_blurred = true
 vim.g.neovide_opacity = 1
