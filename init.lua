@@ -3,15 +3,16 @@ vim.g.maplocalleader = " "
 vim.o.laststatus = 2
 
 require('vim._core.ui2').enable({
+    enable = true,
     msg = {
-        target = 'msg',
-        cmd = { height = 1 },
+        target = 'cmd',
+        cmd = { height = 0 },
         msg = {
             height = 1,
             timeout = 4000,
         },
         pager = {
-            height = 0.5,
+            height = 1,
         },
     }
 })

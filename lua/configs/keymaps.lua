@@ -6,6 +6,7 @@ local set = vim.keymap.set
 
 set("n", "<M-q>", "<CMD>:q<CR>")
 set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode
+set({"i", "c", "v"}, "<C-c>", "<ESC>") 
 -- vim.keymap.set("t", "<ESC>", "<C-\\><C-n>") -- escep from terminla mode
 
 set("n", "<leader>x", "<CMD>.lua<CR>", { desc = "run current lua file" })
@@ -33,9 +34,9 @@ set("n", "<M-.>", "<c-w>5>")
 set("n", "<M-t>", "<C-W>+")
 set("n", "<M-s>", "<C-W>-")
 
--- set("n", "-", function()
---     vim.cmd("Ex")
--- end, { desc = "open file exploer" })
+set("n", "-", function()
+    vim.cmd("Ex")
+end, { desc = "open file exploer" })
 
 set("n", "<leader>qo", "<ESC><CMD>copen<CR>", { desc = "open Quickfix" })
 set("n", "<leader>qq", "<ESC><CMD>cclose<CR>", { desc = "close Quickfix" })
@@ -91,3 +92,6 @@ set("n", "grl", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end
 end, { desc = "inlay_hint enable" })
+
+set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
+{ desc = "signature_help", silent = true, remap = false, buffer = buf })
