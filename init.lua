@@ -6,7 +6,7 @@ require('vim._core.ui2').enable({
     enable = true,
     msg = {
         target = 'cmd',
-        cmd = { height = 0 },
+        cmd = { height = 1 },
         msg = {
             height = 1,
             timeout = 4000,
