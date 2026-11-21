@@ -92,6 +92,3 @@ set("n", "grl", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end
 end, { desc = "inlay_hint enable" })
-
-set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
-{ desc = "signature_help", silent = true, remap = false, buffer = buf })
