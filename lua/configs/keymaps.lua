@@ -46,6 +46,13 @@ set("n", "<leader>qe", function() vim.diagnostic.setqflist() end, { desc = "prev
 set("n", "M-j", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
 set("n", "M-k", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function(event)
+    set("n", "q", "<cmd>cclose<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
 -- spell checker
 set("n", "<leader>ss", "<CMD>:setlocal spell! spelllang=en_us<CR>", { desc = "set spell" })
 
@@ -92,3 +99,5 @@ set("n", "grl", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end
 end, { desc = "inlay_hint enable" })
+
+
