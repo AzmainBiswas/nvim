@@ -5,7 +5,7 @@ vim.o.laststatus = 2
 require('vim._core.ui2').enable({
     enable = true,
     msg = {
-        target = 'cmd',
+        target = 'msg',
         cmd = { height = 1 },
         msg = {
             height = 1,
