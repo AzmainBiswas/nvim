@@ -9,6 +9,8 @@ set("t", "<ESC><ESC>", "<C-\\><C-n>") -- escep from terminla mode
 set({"i", "c", "v"}, "<C-c>", "<ESC>") 
 -- vim.keymap.set("t", "<ESC>", "<C-\\><C-n>") -- escep from terminla mode
 
+
+
 set("n", "<leader>x", "<CMD>.lua<CR>", { desc = "run current lua file" })
 set("n", "<leader><leader>", function()
     vim.cmd("so")
@@ -28,6 +30,16 @@ set("n", "N", "Nzzzv")
 set({ "n", "v" }, "<leader>y", [["+y]])
 set("n", "<leader>y", [["+y]])
 
+-- Window
+set("n", "<M-w>", "<C-w>w", { desc = "Cycle to next window" })
+set("t", "<M-w>", "<C-\\><C-n><C-w>w", { desc = "Cycle to next window from terminal" })
+set("n", "<M-d>", "<Cmd>bdelete<CR>", { desc = "Delete current buffer" })
+set("n", "<M-x>", "<C-w>x", { desc = "Swap current window with next" })
+
+set("n", "<M-e>", ":e %:h", { desc = "Open file in current window" })
+-- Open a file in a new vertical split (side-by-side)
+set("n", "<M-v>", ":vsplit %:h/", { desc = "Open file in vertical split" })
+
 -- resize vim window
 set("n", "<M-,>", "<c-w>5<")
 set("n", "<M-.>", "<c-w>5>")
@@ -43,8 +55,8 @@ set("n", "<leader>qq", "<ESC><CMD>cclose<CR>", { desc = "close Quickfix" })
 set("n", "<leader>qn", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
 set("n", "<leader>qp", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
 set("n", "<leader>qe", function() vim.diagnostic.setqflist() end, { desc = "prev Quickfix" })
-set("n", "M-j", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
-set("n", "M-k", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
+set("n", "<M-j>", "<ESC><CMD>cnext<CR>", { desc = "next Quickfix" })
+set("n", "<M-k>", "<ESC><CMD>cprevious<CR>", { desc = "prev Quickfix" })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "qf",

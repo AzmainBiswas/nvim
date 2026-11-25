@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
         if client:supports_method('textDocument/completion') then
             vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-            vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy' }
+            -- vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'popup', 'fuzzy' }
             vim.opt.complete = 'o,.,w,b,u'
             -- vim.opt.complete = 'o'
             vim.lsp.completion.enable(true, client.id, ev.buf, {

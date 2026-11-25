@@ -2,6 +2,7 @@ vim.opt.scrolloff = 8
 vim.opt.smoothscroll = true
 vim.opt.confirm = true
 
+vim.opt.autochdir = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 -- vim.opt.numberwidth = 4
@@ -35,7 +36,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
--- vim.opt.complete = 'o,.,w,b,u'
+vim.opt.complete = '.,w,b,u'
 vim.opt.completeopt = 'menu,menuone,fuzzy,noinsert'
 vim.opt.completeopt:append("popup")
 -- Shorten the messaging delay in the command line so completion feels snappier
