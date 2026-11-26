@@ -39,7 +39,7 @@ vim.api.nvim_create_user_command('Rebuild', function()
     vim.cmd('cwindow')
 end, {})
 
-vim.keymap.set('n', '<C-B>', function()
+vim.keymap.set('n', '<M-b>', function()
     if compile_cmd then
         vim.cmd('Rebuild')
     else
