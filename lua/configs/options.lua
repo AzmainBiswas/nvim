@@ -2,7 +2,8 @@ vim.opt.scrolloff = 8
 vim.opt.smoothscroll = true
 vim.opt.confirm = true
 
-vim.opt.autochdir = true
+vim.o.exrc = true
+-- vim.opt.autochdir = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 -- vim.opt.numberwidth = 4
